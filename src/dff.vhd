@@ -23,7 +23,7 @@ end dff;
 
 architecture rtl of dff is
 begin
-    dff_proc: process(reset_n, clk)
+    dff_proc: process(reset_n, clk, set)
         begin
             if (reset_n = '0') then
                 q <= set;

@@ -1,6 +1,3 @@
--- rand_num_generator.vhd
--- Feedback polynomial : x^16 + x^14 + x^13 + x^11 + 1 
-
 library IEEE;
 use IEEE.std_logic_1164.all;
 
@@ -13,11 +10,9 @@ entity shift_reg is
         Nbit    : positive  := 16
     );
     port (
-        d_in        : in std_logic;
         d_out       : out std_logic;
         seed        : in std_logic_vector(0 to Nbit-1); -- initial state
         state       : out std_logic_vector(0 to Nbit-1); -- actual state
-        feedback_bit: inout std_logic;
         reset_n     : in std_logic; 
         clk         : in std_logic
     );
@@ -41,6 +36,7 @@ architecture rtl of shift_reg is
 
     signal q_s      : std_logic_vector (0 to Nbit-2);
     signal d_out_s  : std_logic;
+    signal feedback_bit : std_logic;
 
 begin
 
@@ -80,4 +76,5 @@ begin
     d_out <= d_out_s;
     feedback_bit <= (d_out_s xor q_s(13)) xor q_s(12) xor q_s(10);
     state <= feedback_bit & q_s;
+
 end rtl;

@@ -24,11 +24,9 @@ architecture rtl of shift_reg_tb is
     constant Nbit           : positive  := 16;
 
     -- SIGNALS
-    signal d_in_ext         : std_logic := '0';
     signal d_out_ext        : std_logic;
     signal seed_ext         : std_logic_vector(0 to Nbit-1);
     signal state_ext        : std_logic_vector(0 to Nbit-1);
-    signal feedback_bit_ext         : std_logic;
     signal clk              : std_logic := '0'; 
     signal reset_n_ext      : std_logic := '0';
     signal end_sim          : std_logic := '1';
@@ -39,11 +37,9 @@ architecture rtl of shift_reg_tb is
             Nbit    : positive  := 16
         );
         port (
-            d_in    : in std_logic;
             d_out   : out std_logic;
             seed    : in std_logic_vector(0 to Nbit-1);
             state   : out std_logic_vector(0 to Nbit-1);
-            feedback_bit    : inout std_logic;
             reset_n : in std_logic; 
             clk     : in std_logic
         );
@@ -59,32 +55,29 @@ architecture rtl of shift_reg_tb is
         Nbit    => Nbit
     )
     port map (
-        d_in      =>  d_in_ext,
         d_out     =>  d_out_ext,
         seed      =>  seed_ext,
         state     =>  state_ext,
-        feedback_bit      =>  feedback_bit_ext,
         clk       =>  clk,
         reset_n   =>  reset_n_ext
     );
 
     stimuli: process(clk, reset_n_ext) -- process used to make the testbench signals change synchronously with the rising edge of the clock
-        variable t : integer := 0; -- variable used to count the clock cycle after the reset
-        variable BUF : line;
+    
+        variable line_to_write : line;
+    
     begin
         if(reset_n_ext = '0') then
             seed_ext <= "0000101011000110";
-            t := 0;
         elsif(rising_edge(clk)) then
 
             if(state_ext = seed_ext) then
                 end_sim <= '0';
             end if;
-        
-            WRITE(BUF, feedback_bit_ext);
-            WRITEline(SHIFT_REG_OUT, BUF);    
-                            
-            t := t + 1;
+
+            WRITE(line_to_write, d_out_ext);
+            WRITEline(SHIFT_REG_OUT, line_to_write);  
         end if;
     end process;       
+
 end rtl;
