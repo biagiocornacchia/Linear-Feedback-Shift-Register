@@ -71,7 +71,7 @@ architecture rtl of shift_reg_tb is
     
     begin
         if(reset_n_ext = '0') then
-            seed_ext <= "0000101011000110";
+            seed_ext <= "1100101011000110";
             seed_load_ext <= '1';
         elsif(rising_edge(clk)) then
 

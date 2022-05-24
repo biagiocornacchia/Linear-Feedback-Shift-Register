@@ -1,6 +1,6 @@
 import filecmp
 
-start_state = 0b0000101011000110 #0b01100011010000
+start_state = 0b1100101011000110
 lfsr = start_state
 period = 0
 

@@ -75,7 +75,7 @@ begin
     state <= d_in;
 
     -- Inizialmente il feedback bit deve essere calcolato usando il seed (che corrisponde allo stato iniziale del LFSR)
-    feedback_bit <= (seed(15) xor seed(13)) xor seed(12) xor seed(10) when seed_load = '1' else not (d_out_s xor q_s(13)) xor q_s(12) xor q_s(10);
-    d_in <= seed(0 to 15) when seed_load = '1' else not feedback_bit & q_s(0 to Nbit-2);
+    feedback_bit <= (seed(15) xor seed(13)) xor seed(12) xor seed(10) when seed_load = '1' else (d_out_s xor q_s(13)) xor q_s(12) xor q_s(10);
+    d_in <= seed(0 to 15) when seed_load = '1' else feedback_bit & q_s(0 to Nbit-2);
 
 end rtl;
