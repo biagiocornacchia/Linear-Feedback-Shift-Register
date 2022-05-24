@@ -12,8 +12,7 @@ entity dff is
         clk         : in    std_logic;
         reset_n     : in    std_logic;
         d           : in    std_logic;
-        q           : out   std_logic;
-        set         : in    std_logic
+        q           : out   std_logic
     );
 end dff;
 
@@ -23,10 +22,10 @@ end dff;
 
 architecture rtl of dff is
 begin
-    dff_proc: process(reset_n, clk, set)
+    dff_proc: process(reset_n, clk)
         begin
             if (reset_n = '0') then
-                q <= set;
+                q <= '0';
             elsif (rising_edge(clk)) then
                 q <= d;
             end if;

@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon May 23 03:08:16 2022
-# Process ID: 10916
+# Start of session at: Tue May 24 12:17:35 2022
+# Process ID: 8260
 # Current directory: C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/vivado/LFSR.runs/synth_1
-# Command line: vivado.exe -log LFSR.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LFSR.tcl
-# Log file: C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/vivado/LFSR.runs/synth_1/LFSR.vds
+# Command line: vivado.exe -log shift_reg.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source shift_reg.tcl
+# Log file: C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/vivado/LFSR.runs/synth_1/shift_reg.vds
 # Journal file: C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/vivado/LFSR.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source LFSR.tcl -notrace
+source shift_reg.tcl -notrace

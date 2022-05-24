@@ -26,6 +26,7 @@ architecture rtl of shift_reg_tb is
     -- SIGNALS
     signal d_out_ext        : std_logic;
     signal seed_ext         : std_logic_vector(0 to Nbit-1);
+    signal seed_load_ext    : std_logic := '0';
     signal state_ext        : std_logic_vector(0 to Nbit-1);
     signal clk              : std_logic := '0'; 
     signal reset_n_ext      : std_logic := '0';
@@ -38,6 +39,7 @@ architecture rtl of shift_reg_tb is
         );
         port (
             d_out   : out std_logic;
+            seed_load   : in std_logic;
             seed    : in std_logic_vector(0 to Nbit-1);
             state   : out std_logic_vector(0 to Nbit-1);
             reset_n : in std_logic; 
@@ -56,6 +58,7 @@ architecture rtl of shift_reg_tb is
     )
     port map (
         d_out     =>  d_out_ext,
+        seed_load => seed_load_ext,
         seed      =>  seed_ext,
         state     =>  state_ext,
         clk       =>  clk,
@@ -69,14 +72,20 @@ architecture rtl of shift_reg_tb is
     begin
         if(reset_n_ext = '0') then
             seed_ext <= "0000101011000110";
+            seed_load_ext <= '1';
         elsif(rising_edge(clk)) then
 
-            if(state_ext = seed_ext) then
+            seed_load_ext <= '0';
+
+            if(state_ext = seed_ext and seed_load_ext = '0') then
                 end_sim <= '0';
             end if;
 
-            WRITE(line_to_write, d_out_ext);
-            WRITEline(SHIFT_REG_OUT, line_to_write);  
+            if(seed_load_ext = '0') then
+                WRITE(line_to_write, d_out_ext);
+                WRITEline(SHIFT_REG_OUT, line_to_write);  
+            end if;
+
         end if;
     end process;       
 

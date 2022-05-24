@@ -63,11 +63,9 @@ architecture rtl of dff_tb is
 				when 1  => d_tb    <= '0';
 				when 2  => d_tb    <= '1';
 				when 3  => d_tb    <= '1';
-				when 4  => reset_n_tb   <= '0'; -- test reset
 				when 5  => d_tb    <= '1';
                 when 6  => reset_n_tb   <= '1';
 				when 7  => d_tb    <= '1';
-                when 8  => set_tb  <= '1'; -- test set
                 when 9  => d_tb    <= '0';
 				when 10 => end_sim <= '0'; -- stop simulation
 				when others => null;

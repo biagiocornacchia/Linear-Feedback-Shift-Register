@@ -11,8 +11,9 @@ entity shift_reg is
     );
     port (
         d_out       : out std_logic;
+        seed_load   : in std_logic;
         seed        : in std_logic_vector(0 to Nbit-1); -- initial state
-        state       : out std_logic_vector(0 to Nbit-1); -- actual state
+        state       : out std_logic_vector(0 to Nbit-1); -- current state
         reset_n     : in std_logic; 
         clk         : in std_logic
     );
@@ -28,15 +29,15 @@ architecture rtl of shift_reg is
         port (
             d       : in    std_logic;
             q       : out   std_logic;
-            set     : in    std_logic;
             reset_n : in    std_logic;
             clk     : in    std_logic
         );
     end component dff;
 
-    signal q_s      : std_logic_vector (0 to Nbit-2);
-    signal d_out_s  : std_logic;
+    signal q_s          : std_logic_vector (0 to Nbit-2);
+    signal d_out_s      : std_logic;
     signal feedback_bit : std_logic;
+    signal d_in         : std_logic_vector (0 to Nbit-1);
 
 begin
 
@@ -44,9 +45,8 @@ begin
         -- FIRST STAGE
         FIRST: if i = 0 generate
             FF0: dff port map(
-                d       => feedback_bit,
+                d       => d_in(i),
                 q       => q_s(i),
-                set     => seed(i),
                 reset_n => reset_n, 
                 clk     => clk
             );
@@ -54,9 +54,8 @@ begin
         -- INTERNAL STAGE
         INTERNAL: if i > 0 and i < Nbit-1 generate
             FFI: dff port map (
-                d       => q_s(i - 1),
+                d       => d_in(i),
                 q       => q_s(i),
-                set     => seed(i),
                 reset_n => reset_n, 
                 clk     => clk
             );
@@ -64,9 +63,8 @@ begin
         -- LAST STAGE
         LAST: if i = Nbit-1 generate
             FFN: dff port map(
-                d       => q_s(i-1),
+                d       => d_in(i),
                 q       => d_out_s,
-                set     => seed(i),
                 reset_n => reset_n, 
                 clk     => clk
             );
@@ -74,7 +72,10 @@ begin
     end generate GEN;
 
     d_out <= d_out_s;
-    feedback_bit <= (d_out_s xor q_s(13)) xor q_s(12) xor q_s(10);
-    state <= feedback_bit & q_s;
+    state <= d_in;
+
+    -- Inizialmente il feedback bit deve essere calcolato usando il seed (che corrisponde allo stato iniziale del LFSR)
+    feedback_bit <= (seed(15) xor seed(13)) xor seed(12) xor seed(10) when seed_load = '1' else not (d_out_s xor q_s(13)) xor q_s(12) xor q_s(10);
+    d_in <= seed(0 to 15) when seed_load = '1' else not feedback_bit & q_s(0 to Nbit-2);
 
 end rtl;

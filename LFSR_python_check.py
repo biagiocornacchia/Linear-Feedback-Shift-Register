@@ -34,4 +34,4 @@ with open("output.txt", "w") as f:
 
         f.write(str(output_bit) + "\n")
 
-print(filecmp.cmp('output.txt', 'LFSR_out.tv'))
+print(filecmp.cmp('output.txt', 'LFSR_OUT.tv'))
