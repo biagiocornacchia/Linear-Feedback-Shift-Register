@@ -1,0 +1,62 @@
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.lfsr_wseed_tb
+# vsim -gui work.lfsr_wseed_tb 
+# Start time: 21:49:26 on May 27,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.lfsr_wseed_tb(rtl)
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)
+run -all
+# ** Fatal: (vsim-3551) TEXTIO : Read past end of file "LFSR_SEED.txt".
+#    Time: 1310715 ns  Iteration: 1  Process: /lfsr_wseed_tb/stimuli File: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
+# Fatal error in Process stimuli at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd line 72
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 72 Process stimuli
+# 
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.lfsr_wseed_tb(rtl)
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)
+run -all
+# ** Fatal: (vsim-3551) TEXTIO : Read past end of file "LFSR_SEED.txt".
+#    Time: 1310715 ns  Iteration: 1  Process: /lfsr_wseed_tb/stimuli File: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
+# Fatal error in Process stimuli at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd line 72
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 72 Process stimuli
+# 
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.lfsr_wseed_tb(rtl)
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)
+run -all
+# ** Fatal: (vsim-3551) TEXTIO : Read past end of file "LFSR_SEED.txt".
+#    Time: 1310715 ns  Iteration: 1  Process: /lfsr_wseed_tb/stimuli File: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
+# Fatal error in Process stimuli at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd line 72
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 72 Process stimuli
+# 

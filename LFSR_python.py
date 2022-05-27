@@ -14,6 +14,10 @@ print("|                     LFSR PYTHON                      |")
 print("+------------------------------------------------------+")
 print("\n[!] INITIAL SEED: {:016b}".format(seed))
 
+multipleSeed = 0
+
+number = 0
+
 with open("LFSR_OUTPUT_STREAM_PYTHON.txt", "w") as f:
 
     f.write(str(lfsr & 1) + "\n")
@@ -28,7 +32,17 @@ with open("LFSR_OUTPUT_STREAM_PYTHON.txt", "w") as f:
         
         if (lfsr == seed):
             print("[!] OUTPUT PERIOD: " + str(period))
-            break
+            seed = 0b1001101011000110
+            lfsr = seed
+            period = 0
+            number = number + 1
+            
+            if(number == 2):
+                break
+            else:
+                f.write(str(lfsr & 1) + "\n")
+                outputstream = 0
+                continue
         
         #print("{:016b}".format(lfsr), end="        ")
         #print(bit, end="                  ")
