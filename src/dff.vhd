@@ -1,5 +1,3 @@
--- D-Type Flip-Flop with Set/Reset in order to set the initial seed in every DFF
-
 library IEEE;
 use IEEE.std_logic_1164.all;
 
@@ -7,20 +5,20 @@ use IEEE.std_logic_1164.all;
 --       ENTITY DECLARATION (the external view of the entity)
 --------------------------------------------------------------------
 
-entity dff is
+entity DFF is
     port (
         clk         : in    std_logic;
-        reset_n     : in    std_logic;
+        reset_n     : in    std_logic; -- asynchronous reset
         d           : in    std_logic;
         q           : out   std_logic
     );
-end dff;
+end DFF;
 
 -----------------------------------------------------------------------
 --      ARCHITECTURE (the internal description of the entity)
 -----------------------------------------------------------------------
 
-architecture rtl of dff is
+architecture rtl of DFF is
 begin
     dff_proc: process(reset_n, clk)
         begin

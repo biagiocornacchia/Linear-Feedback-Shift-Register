@@ -1,13 +1,13 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
--------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed May 25 01:09:43 2022
+| Date         : Fri May 27 18:26:59 2022
 | Host         : OSPREY running 64-bit major release  (build 9200)
-| Command      : report_utilization -file shift_reg_utilization_synth.rpt -pb shift_reg_utilization_synth.pb
-| Design       : shift_reg
+| Command      : report_utilization -file LFSR_utilization_synth.rpt -pb LFSR_utilization_synth.pb
+| Design       : LFSR
 | Device       : 7z010clg400-1
 | Design State : Synthesized
--------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 

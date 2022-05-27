@@ -8,254 +8,170 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/modelsim
+dC:/intelFPGA/20.1
 Edff
-Z1 w1653385592
-Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 189
-R0
-Z4 8C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/dff.vhd
-Z5 FC:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/dff.vhd
+Z0 w1653661788
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 78
+Z3 dC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/modelsim
+Z4 8C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd
+Z5 FC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd
 l0
-Z6 L10 1
-VMWn8Mf@2:`HXjMLX0HMH]3
-!s100 McO>afLG<1O`8F<=WfbA92
-Z7 OV;C;2020.1;71
+L8 1
+V`:`SRKMdlQQJlQ8>2`8a;3
+!s100 ffE3KFgZ>:jN?WR@iBa4U3
+Z6 OV;C;2020.1;71
 32
-Z8 !s110 1653433838
+Z7 !s110 1653668560
 !i10b 1
-Z9 !s108 1653433838.000000
-Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/dff.vhd|
-Z11 !s107 C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/dff.vhd|
+Z8 !s108 1653668560.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd|
+Z10 !s107 C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd|
 !i113 1
-Z12 o-work work -2002 -explicit
-Z13 tExplicit 1 CvgOpt 0
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
 Artl
+R1
 R2
-R3
-DEx4 work 3 dff 0 22 MWn8Mf@2:`HXjMLX0HMH]3
-!i122 189
-l24
-L23 11
-VTUkL0a<fhCD:DfZK`e3^c0
-!s100 Dno?dUmGf;]f=oGKLjR4D3
-R7
+DEx4 work 3 dff 0 22 `:`SRKMdlQQJlQ8>2`8a;3
+!i122 78
+l22
+L21 11
+VTlm;3DZ8nH^AEF612Y=lR3
+!s100 Ld7VEOIa8Ff2RU]E5:m3m2
+R6
 32
-R8
+R7
 !i10b 1
+R8
 R9
 R10
+!i113 1
 R11
-!i113 1
 R12
-R13
 Edff_tb
-Z14 w1653382958
+Z13 w1653667202
+R1
 R2
+!i122 80
 R3
-!i122 191
-R0
-Z15 8C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/dff_tb.vhd
-Z16 FC:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/dff_tb.vhd
+Z14 8C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd
+Z15 FC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd
 l0
-L8 1
-V^noDVzDkPIdG4BYH`TW?Z0
-!s100 :le51g?mgC6@mVHL@XX8T3
-R7
+L4 1
+VL:>V@H406eTfZkl7=TfN11
+!s100 HLX=fQo6k[=0U@NLR3Z:T0
+R6
 32
-R8
+R7
 !i10b 1
-R9
-Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/dff_tb.vhd|
-Z18 !s107 C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/dff_tb.vhd|
+R8
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd|
+Z17 !s107 C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd|
 !i113 1
+R11
 R12
-R13
 Artl
+R1
 R2
-R3
-DEx4 work 6 dff_tb 0 22 ^noDVzDkPIdG4BYH`TW?Z0
-!i122 191
-l40
-L15 64
-V4P7QNoMa9h6IAEAf:zb]^3
-!s100 Yj=zKjzF>Y7ULbe@S>dIk1
-R7
+DEx4 work 6 dff_tb 0 22 L:>V@H406eTfZkl7=TfN11
+!i122 80
+l30
+L7 60
+V9G?;RHhH_X6WzaT8Yje3S1
+!s100 MbV^g>1U@mV]^EEkTMBcj3
+R6
 32
-R8
+R7
 !i10b 1
-R9
+R8
+R16
 R17
-R18
 !i113 1
+R11
 R12
-R13
 Elfsr
-Z19 w1653268366
+Z18 w1653664991
+R1
 R2
+!i122 79
 R3
-!i122 187
-R0
-Z20 8C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/LFSR.vhd
-Z21 FC:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/LFSR.vhd
+Z19 8C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd
+Z20 FC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd
 l0
+L12 1
+VJKCHPF@_[QYTUX=8?:O1X2
+!s100 1Xe=PRcbQ_lHf9JUa>2YR0
 R6
-V0n0GXUjLgVRHz_L9cG;Y90
-!s100 >]Dij7?PHYHCQ<eIZ0:cG1
-R7
 32
-Z22 !s110 1653433824
+R7
 !i10b 1
-Z23 !s108 1653433823.000000
-Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/LFSR.vhd|
-Z25 !s107 C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/LFSR.vhd|
+R8
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd|
+Z22 !s107 C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd|
 !i113 1
+R11
 R12
-R13
 Artl
+R1
 R2
-R3
-DEx4 work 4 lfsr 0 22 0n0GXUjLgVRHz_L9cG;Y90
-!i122 187
-l42
-L27 30
-ViSEPSMbii56]58dlm@=5V2
-!s100 zgczg2SBOob<>]OXb:^Hm2
-R7
-32
-R22
-!i10b 1
-R23
-R24
-R25
-!i113 1
-R12
-R13
-Elfsr_tb
-R19
-Z26 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
-R2
-R3
-!i122 188
-R0
-Z27 8C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd
-Z28 FC:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd
-l0
-R6
-VhQ@0:dGZ7lI4Bn]X_]6JU1
-!s100 ^X1CD6zz33eD7j]eYfCzG0
-R7
-32
-R22
-!i10b 1
-Z29 !s108 1653433824.000000
-Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd|
-Z31 !s107 C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd|
-!i113 1
-R12
-R13
-Artl
-R26
-R2
-R3
-DEx4 work 7 lfsr_tb 0 22 hQ@0:dGZ7lI4Bn]X_]6JU1
-!i122 188
+DEx4 work 4 lfsr 0 22 JKCHPF@_[QYTUX=8?:O1X2
+!i122 79
 l48
-L17 68
-VY8V^G7i_47coAa4Vf@eiK2
-!s100 Le6ZAI@P;M]UDc>kRR_cD3
-R7
-32
-R22
-!i10b 1
-R29
-R30
-R31
-!i113 1
-R12
-R13
-Eshift_reg
-Z32 w1653433567
-R2
-R3
-!i122 190
-R0
-Z33 8C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/shift_reg.vhd
-Z34 FC:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/shift_reg.vhd
-l0
-L8 1
-VA2DJBLECm6jPFj<M3oh]`0
-!s100 5<6Og[:6OhcP:TA4lV[^b3
-R7
-32
-R8
-!i10b 1
-R9
-Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/shift_reg.vhd|
-Z36 !s107 C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/shift_reg.vhd|
-!i113 1
-R12
-R13
-Artl
-R2
-R3
-DEx4 work 9 shift_reg 0 22 A2DJBLECm6jPFj<M3oh]`0
-!i122 190
-l42
-L26 56
-V_a?9I2Y=R4f;iUBELWGC[2
-!s100 R096@5DSEPDKXWmSWLe:c1
-R7
-32
-R8
-!i10b 1
-R9
-R35
-R36
-!i113 1
-R12
-R13
-Eshift_reg_tb
-Z37 w1653433764
-R26
-R2
-R3
-!i122 192
-R0
-Z38 8C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/shift_reg_tb.vhd
-Z39 FC:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/shift_reg_tb.vhd
-l0
+L30 60
+V>W:gZ;T_>0Q_YID51O59e1
+!s100 OCC2PZ@Y6Gl3WbFPO;SGi1
 R6
-VA]oekh>g`ZVMd]Cz_L[ZV0
-!s100 EB]:7?TLKSaDReoTZj]nN3
-R7
 32
-R8
+R7
 !i10b 1
-R9
-Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/shift_reg_tb.vhd|
-Z41 !s107 C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/shift_reg_tb.vhd|
+R8
+R21
+R22
 !i113 1
+R11
 R12
-R13
-Artl
-R26
+Elfsr_tb
+Z23 w1653668296
+Z24 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+R1
 R2
+!i122 81
 R3
-Z42 DEx4 work 12 shift_reg_tb 0 22 A]oekh>g`ZVMd]Cz_L[ZV0
-!i122 192
-l50
-Z43 L17 76
-Z44 V0Vn4[J_HaHc92Hg5C_X0d2
-Z45 !s100 eGH@Izo;cHDzan5R=jmAa1
-R7
+Z25 8C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd
+Z26 FC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd
+l0
+L6 1
+V?CAfCNQF8=d_`B]W7]TnL1
+!s100 EH2M=W_4`Jh`6O=7KNnkO1
+R6
 32
-R8
+R7
 !i10b 1
-R9
-R40
-R41
+R8
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd|
+Z28 !s107 C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd|
 !i113 1
+R11
 R12
-R13
+Artl
+R24
+R1
+R2
+Z29 DEx4 work 7 lfsr_tb 0 22 ?CAfCNQF8=d_`B]W7]TnL1
+!i122 81
+l42
+L9 78
+VX?SPjJManW6g`zCIKKzG^2
+!s100 n:EJDiBQ5G^W2S]1IPFF:2
+R6
+32
+R7
+!i10b 1
+R8
+R27
+R28
+!i113 1
+R11
+R12

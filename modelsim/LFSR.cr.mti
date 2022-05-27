@@ -1,35 +1,25 @@
-C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/dff.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/dff.vhd
+{C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity dff
--- Compiling architecture rtl of dff
+-- Compiling entity LFSR
+-- Compiling architecture rtl of LFSR
 
-} {} {}} C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/shift_reg_tb.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/shift_reg_tb.vhd
+} {} {}} {C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Loading package std_logic_textio
--- Compiling entity shift_reg_tb
--- Compiling architecture rtl of shift_reg_tb
-** Warning: C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/shift_reg_tb.vhd(19): (vcom-1194) FILE declaration was written using VHDL 1987 syntax.
+-- Compiling entity DFF_tb
+-- Compiling architecture rtl of DFF_tb
 
-} {} {}} C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/shift_reg.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/src/shift_reg.vhd
+} {} {}} {C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity shift_reg
--- Compiling architecture rtl of shift_reg
-
-} {} {}} C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/dff_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/tb/dff_tb.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity dff_tb
--- Compiling architecture rtl of dff_tb
+-- Compiling entity DFF
+-- Compiling architecture rtl of DFF
 
 } {} {}}

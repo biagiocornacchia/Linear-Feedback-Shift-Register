@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Biagio/Desktop/Linear-Feedback-Shift-Register/vivado/LFSR.runs/synth_1'
+HD_PWD='C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log shift_reg.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source shift_reg.tcl
+EAStep vivado -log LFSR.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source LFSR.tcl
