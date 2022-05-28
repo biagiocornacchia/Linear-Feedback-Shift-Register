@@ -15,8 +15,6 @@ print("|                     LFSR PYTHON                      |")
 print("+------------------------------------------------------+")
 print("\n[!] INITIAL SEED: {:016b}".format(seed))
 
-number = 0
-
 with open("LFSR_OUTPUT_STREAM_PYTHON.txt", "w") as f:
 
     f.write(str(lfsr & 1) + "\n")
