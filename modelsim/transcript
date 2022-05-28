@@ -1,12 +1,6 @@
-# Compile of DFF.vhd was successful.
-# Compile of LFSR.vhd was successful.
-# Compile of DFF_tb.vhd was successful.
-# Compile of LFSR_tb.vhd was successful with warnings.
-# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
-# 5 compiles, 0 failed with no errors.
 vsim -gui work.lfsr_wseed_tb
 # vsim -gui work.lfsr_wseed_tb 
-# Start time: 21:49:26 on May 27,2022
+# Start time: 10:26:30 on May 28,2022
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -22,22 +16,69 @@ run -all
 # HDL call sequence:
 # Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 72 Process stimuli
 # 
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+add wave -position insertpoint  \
+sim:/lfsr_wseed_tb/clk_tb \
+sim:/lfsr_wseed_tb/end_sim \
+sim:/lfsr_wseed_tb/LFSR_INPUT \
+sim:/lfsr_wseed_tb/LFSR_OUTPUT \
+sim:/lfsr_wseed_tb/Nbit \
+sim:/lfsr_wseed_tb/output_bit_tb \
+sim:/lfsr_wseed_tb/reset_n_tb \
+sim:/lfsr_wseed_tb/seed_load_tb \
+sim:/lfsr_wseed_tb/seed_tb \
+sim:/lfsr_wseed_tb/state_tb \
+sim:/lfsr_wseed_tb/T_CLK \
+sim:/lfsr_wseed_tb/T_RESET
+# (vsim-4027) Logging is not supported for this item: /lfsr_wseed_tb/LFSR_INPUT
+# (vsim-4027) Logging is not supported for this item: /lfsr_wseed_tb/LFSR_OUTPUT
+add wave -position insertpoint  \
+sim:/lfsr_wseed_tb/dut/feedback_bit
+run -all
+# ** Fatal: (vsim-3551) TEXTIO : Read past end of file "LFSR_SEED.txt".
+#    Time: 655375 ns  Iteration: 1  Process: /lfsr_wseed_tb/stimuli File: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
+# Fatal error in Process stimuli at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd line 72
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 72 Process stimuli
+# 
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd failed with 3 errors.
+# 5 compiles, 1 failed with 3 errors.
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd failed with 1 errors.
+# 5 compiles, 1 failed with 1 error.
 # Compile of DFF.vhd was successful.
 # Compile of LFSR.vhd was successful.
 # Compile of DFF_tb.vhd was successful.
 # Compile of LFSR_tb.vhd was successful with warnings.
 # Compile of LFSR_wSEED_tb.vhd was successful with warnings.
 # 5 compiles, 0 failed with no errors.
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Loading work.lfsr_wseed_tb(rtl)
-# Loading work.lfsr(rtl)
-# Loading work.dff(rtl)
 run -all
 # ** Fatal: (vsim-3551) TEXTIO : Read past end of file "LFSR_SEED.txt".
-#    Time: 1310715 ns  Iteration: 1  Process: /lfsr_wseed_tb/stimuli File: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
+#    Time: 655375 ns  Iteration: 1  Process: /lfsr_wseed_tb/stimuli File: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
 # Fatal error in Process stimuli at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd line 72
 # 
+# HDL call sequence:
+# Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 72 Process stimuli
+# 
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+run -all
+# Cannot continue because of fatal error.
 # HDL call sequence:
 # Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 72 Process stimuli
 # 
@@ -53,10 +94,174 @@ restart -f
 # Loading work.lfsr(rtl)
 # Loading work.dff(rtl)
 run -all
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# Loading work.lfsr_wseed_tb(rtl)
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)
+run -all
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.lfsr_wseed_tb(rtl)
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)
+run -all
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+run -all
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.lfsr_wseed_tb(rtl)
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)
+run -all
+quit -sim
+# End time: 11:49:30 on May 28,2022, Elapsed time: 1:23:00
+# Errors: 0, Warnings: 1
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.lfsr_wseed_tb
+# vsim -gui work.lfsr_wseed_tb 
+# Start time: 11:49:38 on May 28,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.lfsr_wseed_tb(rtl)
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)
+run -all
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+restart -f
+run -all
+quit -sim
+# End time: 11:56:16 on May 28,2022, Elapsed time: 0:06:38
+# Errors: 0, Warnings: 1
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.lfsr_wseed_tb
+# vsim -gui work.lfsr_wseed_tb 
+# Start time: 11:56:31 on May 28,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.lfsr_wseed_tb(rtl)
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)
+run -all
 # ** Fatal: (vsim-3551) TEXTIO : Read past end of file "LFSR_SEED.txt".
 #    Time: 1310715 ns  Iteration: 1  Process: /lfsr_wseed_tb/stimuli File: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
-# Fatal error in Process stimuli at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd line 72
+# Fatal error in Process stimuli at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd line 73
 # 
 # HDL call sequence:
-# Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 72 Process stimuli
+# Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 73 Process stimuli
 # 
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)
+# Compile of LFSR_wSEED_tb.vhd failed with 2 errors.
+# 5 compiles, 1 failed with 2 errors.
+run -all
+# ** Fatal: (vsim-3551) TEXTIO : Read past end of file "LFSR_SEED.txt".
+#    Time: 1310715 ns  Iteration: 1  Process: /lfsr_wseed_tb/stimuli File: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
+# Fatal error in Process stimuli at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd line 73
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 73 Process stimuli
+# 
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+run -all
+# ** Fatal: (vsim-3551) TEXTIO : Read past end of file "LFSR_SEED.txt".
+#    Time: 1310715 ns  Iteration: 1  Process: /lfsr_wseed_tb/stimuli File: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
+# Fatal error in Process stimuli at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd line 73
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 73 Process stimuli
+# 
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.lfsr_wseed_tb(rtl)
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)
+run -all
+# ** Fatal: (vsim-3551) TEXTIO : Read past end of file "LFSR_SEED.txt".
+#    Time: 1310715 ns  Iteration: 1  Process: /lfsr_wseed_tb/stimuli File: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
+# Fatal error in Process stimuli at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd line 73
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 73 Process stimuli
+# 
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# ** Fatal: (vsim-3551) TEXTIO : Read past end of file "LFSR_SEED.txt".
+#    Time: 1310715 ns  Iteration: 1  Process: /lfsr_wseed_tb/stimuli File: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
+# Fatal error in Process stimuli at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd line 73
+# 
+# HDL call sequence:
+# Stopped at C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd 73 Process stimuli
+# 
+quit -sim
+# End time: 12:30:24 on May 28,2022, Elapsed time: 0:33:53
+# Errors: 1, Warnings: 1
+# Compile of DFF.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# Compile of LFSR_wSEED_tb.vhd was successful with warnings.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.lfsr_wseed_tb
+# vsim -gui work.lfsr_wseed_tb 
+# Start time: 12:30:32 on May 28,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.lfsr_wseed_tb(rtl)
+# Loading work.lfsr(rtl)
+# Loading work.dff(rtl)

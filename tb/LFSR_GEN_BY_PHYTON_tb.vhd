@@ -3,10 +3,10 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_textio.all;
 use STD.textio.all;
 
-entity LFSR_wSEED_tb is
-end LFSR_wSEED_tb;
+entity LFSR_PYTHON_tb is
+end LFSR_PYTHON_tb;
 
-architecture rtl of LFSR_wSEED_tb is	
+architecture rtl of LFSR_PYTHON_tb is	
 
     file LFSR_OUTPUT : text is out "LFSR_OUTPUT_STREAM.txt";
     file LFSR_INPUT : text is in "LFSR_SEED.txt";
@@ -68,6 +68,7 @@ architecture rtl of LFSR_wSEED_tb is
     begin
 
         if(reset_n_tb = '0') then
+
             -- Reading a seed from the file
             readline(LFSR_INPUT, new_seed);
             read(new_seed, initial_value);
@@ -83,12 +84,9 @@ architecture rtl of LFSR_wSEED_tb is
             if(state_tb = seed_tb and seed_load_tb = '0') then
                 number_of_seeds := number_of_seeds + 1;
                 reset_n_tb <= '0';
-
-                --WRITEline(LFSR_OUTPUT, "SEED");  
-
             end if;
 
-            if(number_of_seeds = 2) then
+            if(number_of_seeds = 3) then
                 end_sim <= '0';
             end if;
 
