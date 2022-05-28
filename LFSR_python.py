@@ -8,7 +8,7 @@ def check_correctnes(start_index, period):
     with open('LFSR_OUTPUT_STREAM_PYTHON.txt', "r") as output_python:
         with open('modelsim/LFSR_OUTPUT_STREAM.txt', "r") as file_modelsim:
 
-            file_modelsim.seek(start_index*2) # *2 perchè bisogna contare i \n
+            file_modelsim.seek(start_index*2) # Mult 2 is needed because files contain also the "\n"
             data_modelsim = file_modelsim.read(65535*2).splitlines()
 
             output_python.seek(start_index*2)
