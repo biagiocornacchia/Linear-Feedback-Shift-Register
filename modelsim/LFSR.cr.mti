@@ -22,25 +22,15 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity DFF
 -- Compiling architecture rtl of DFF
 
-} {} {}} {C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd} {2 {vcom -work work -2002 -explicit -stats=none {C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd}
+} {} {}} {C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_GEN_BY_PHYTON_tb.vhd} {2 {vcom -work work -2002 -explicit -stats=none {C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_GEN_BY_PHYTON_tb.vhd}
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package std_logic_textio
--- Compiling entity LFSR_wSEED_tb
--- Compiling architecture rtl of LFSR_wSEED_tb
-** Warning: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd(11): (vcom-1194) FILE declaration was written using VHDL 1987 syntax.
-** Warning: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd(12): (vcom-1194) FILE declaration was written using VHDL 1987 syntax.
-
-} {} {}} {C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd} {2 {vcom -work work -2002 -explicit -stats=none {C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd}
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_textio
--- Compiling entity LFSR_tb
--- Compiling architecture rtl of LFSR_tb
-** Warning: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd(11): (vcom-1194) FILE declaration was written using VHDL 1987 syntax.
+-- Compiling entity LFSR_PYTHON_tb
+-- Compiling architecture rtl of LFSR_PYTHON_tb
+** Warning: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_GEN_BY_PHYTON_tb.vhd(11): (vcom-1194) FILE declaration was written using VHDL 1987 syntax.
+** Warning: C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_GEN_BY_PHYTON_tb.vhd(12): (vcom-1194) FILE declaration was written using VHDL 1987 syntax.
 
 } {} {}}

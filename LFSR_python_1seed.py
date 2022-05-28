@@ -9,6 +9,7 @@ outputstream = 0
 #print("{:016b}".format(lfsr), end="    ")
 #print("BIT (XOR)        OUTPUT STREAM")
 #print("----------------------------------------------------------")
+
 print("+------------------------------------------------------+")
 print("|                     LFSR PYTHON                      |")
 print("+------------------------------------------------------+")
@@ -30,17 +31,7 @@ with open("LFSR_OUTPUT_STREAM_PYTHON.txt", "w") as f:
         
         if (lfsr == seed):
             print("[!] OUTPUT PERIOD: " + str(period))
-            seed = 0b1101110010110111
-            lfsr = seed
-            period = 0
-            number = number + 1
-            
-            if(number == 2):
-                break
-            else:
-                #f.write(str(lfsr & 1) + "\n")
-                outputstream = 0
-                continue
+            break
         
         #print("{:016b}".format(lfsr), end="        ")
         #print(bit, end="                  ")
