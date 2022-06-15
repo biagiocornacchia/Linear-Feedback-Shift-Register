@@ -4,63 +4,67 @@ use IEEE.std_logic_1164.all;
 entity DFF_tb is
 end DFF_tb;
 
-architecture rtl of DFF_tb is
+architecture beh of DFF_tb is
 
     -- Testbench Constants
-    constant T_CLK   : time    := 10 ns;
-	constant T_RESET : time    := 25 ns;
-
-    -- Testbench Signals
-    signal clk_tb       : std_logic := '0'; 
-    signal reset_n_tb   : std_logic := '0';
-    signal d_tb         : std_logic := '1';
-    signal q_tb         : std_logic;
-    signal end_sim      : std_logic := '1'; 
+    constant T_CLK         : time      := 25 ns; 
 
     -- Top level component declaration
-    component DFF
-        port (
-            clk         : in    std_logic;
-            reset_n     : in    std_logic;
-            d           : in    std_logic;
-            q           : out   std_logic
-        );  
-    end component;
+    component DFF is
+		port( 
+			clk     : in std_logic;
+			reset_n : in std_logic;
+			d       : in std_logic;
+			q       : out std_logic
+		);			
+	end component DFF;
+
+    -- Testbench signals
+	signal clk      	: std_logic := '0';
+	signal d_ext    	: std_logic := '1';
+	signal q_ext    	: std_logic;
+	signal reset_n_ext	: std_logic := '0';
+	signal testing  	: boolean := true;
 
     begin
+        -- Clock signal assignment
+        clk <= not clk after T_CLK/2 when testing else '0';
 
-    clk_tb <= (not(clk_tb) and end_sim) after T_CLK / 2; 
-    reset_n_tb <= '1' after T_RESET;
-
-    -- D Flip-Flop instance
-    dut: DFF
-    port map (
-        clk     =>  clk_tb,
-        reset_n =>  reset_n_tb,
-        d       =>  d_tb,
-        q       =>  q_tb
-    );
-
-	stimuli: process(clk_tb, reset_n_tb)
-		variable t : integer := 0;
-	begin
-		if(reset_n_tb = '0') then
-			d_tb <= '0';
-			t := 0;
-		elsif(rising_edge(clk_tb)) then
-			case(t) is   
-				when 1  => d_tb    <= '0';
-				when 2  => d_tb    <= '1';
-				when 3  => d_tb    <= '0';
-				when 5  => d_tb    <= '1';
-				when 7  => d_tb    <= '1';
-                when 9  => d_tb    <= '0';
-				when 10 => end_sim <= '0'; -- stop simulation
-				when others => null;
-			end case;
-			
-			t := t + 1; 
-		end if;
-	end process;
-
-end rtl;
+        -- Component instance
+        dut: DFF
+        port map(
+            d		=>	d_ext,
+            q		=>	q_ext,
+            reset_n	=>	reset_n_ext,
+            clk		=>	clk
+        );
+    
+        stimulus: process
+            begin
+                d_ext 	 	<= '0';            
+                reset_n_ext <= '1';
+                wait for 100 ns;
+                d_ext 	 	<= '1';
+                wait until rising_edge(clk);
+                d_ext 	 	<= '0';
+                wait for 130 ns;
+                d_ext 	 	<= '1';
+                wait for 170 ns;
+                d_ext 	 	<= '1';
+                wait for 200 ns;
+                d_ext 	 	<= '0';
+                wait for 230 ns;
+                d_ext 	 	<= '1';
+                -- test reset
+                wait for 320 ns;   
+                d_ext 	 	<= '1';             
+                reset_n_ext <= '0';
+                wait until rising_edge(clk);
+                d_ext 	 	<= '1';
+                reset_n_ext <= '1';
+                wait until rising_edge(clk);
+                d_ext 	 	<= '0';
+                wait for 500 ns;
+                testing  <= false;
+        end process;
+    end beh;

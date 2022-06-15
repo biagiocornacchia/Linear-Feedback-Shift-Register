@@ -86,10 +86,7 @@ architecture rtl of LFSR_PYTHON_tb is
                 reset_n_tb <= '0';
             end if;
 
-            if(number_of_seeds = 3) then
-                report "Closing file..";
-                file_close(LFSR_OUTPUT);
-                file_close(LFSR_INPUT);
+            if(number_of_seeds = 2) then
                 end_sim <= '0';
             end if;
 

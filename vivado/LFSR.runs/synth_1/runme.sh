@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.runs/synth_1'
+HD_PWD='C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -8,38 +8,38 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/intelFPGA/20.1
+dC:/intelfpga/20.1/modelsim_ase/win32aloem
 Edff
-Z0 w1653661788
+Z0 w1655327619
 Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 323
-Z3 dC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/modelsim
-Z4 8C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd
-Z5 FC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd
+!i122 0
+Z3 dC:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/modelsim
+Z4 8C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd
+Z5 FC:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd
 l0
 L8 1
-V`:`SRKMdlQQJlQ8>2`8a;3
-!s100 ffE3KFgZ>:jN?WR@iBa4U3
+VlD3eAmRU20HoTgW5E`[Hk0
+!s100 ohLFfMJ_0Xg`>>M2AL^_k1
 Z6 OV;C;2020.1;71
 32
-Z7 !s110 1653749542
+Z7 !s110 1655328656
 !i10b 1
-Z8 !s108 1653749542.000000
-Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd|
-Z10 !s107 C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd|
+Z8 !s108 1655328656.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd|
+Z10 !s107 C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd|
 !i113 1
 Z11 o-work work -2002 -explicit
 Z12 tExplicit 1 CvgOpt 0
-Artl
+Abeh
 R1
 R2
-DEx4 work 3 dff 0 22 `:`SRKMdlQQJlQ8>2`8a;3
-!i122 323
-l22
-L21 11
-VTlm;3DZ8nH^AEF612Y=lR3
-!s100 Ld7VEOIa8Ff2RU]E5:m3m2
+DEx4 work 3 dff 0 22 lD3eAmRU20HoTgW5E`[Hk0
+!i122 0
+l23
+L22 13
+V3NN71C7N9kf9;[?NZ^nhh2
+!s100 RD_1:0AQH4ZE^IA7fUY_G3
 R6
 32
 R7
@@ -51,13 +51,13 @@ R10
 R11
 R12
 Edff_tb
-Z13 w1653667202
+Z13 w1655328456
 R1
 R2
-!i122 325
+!i122 2
 R3
-Z14 8C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd
-Z15 FC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd
+Z14 8C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd
+Z15 FC:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd
 l0
 L4 1
 VL:>V@H406eTfZkl7=TfN11
@@ -67,20 +67,20 @@ R6
 R7
 !i10b 1
 R8
-Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd|
-Z17 !s107 C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd|
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd|
+Z17 !s107 C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/DFF_tb.vhd|
 !i113 1
 R11
 R12
-Artl
+Abeh
 R1
 R2
 DEx4 work 6 dff_tb 0 22 L:>V@H406eTfZkl7=TfN11
-!i122 325
-l30
-L7 60
-V9G?;RHhH_X6WzaT8Yje3S1
-!s100 MbV^g>1U@mV]^EEkTMBcj3
+!i122 2
+l29
+L7 64
+V0S[ofbMKiGBf_mmeQ;V=42
+!s100 Ho26B1eBe8UhZHfz>OKY40
 R6
 32
 R7
@@ -95,10 +95,10 @@ Elfsr
 Z18 w1653664991
 R1
 R2
-!i122 324
+!i122 1
 R3
-Z19 8C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd
-Z20 FC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd
+Z19 8C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd
+Z20 FC:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd
 l0
 L12 1
 VJKCHPF@_[QYTUX=8?:O1X2
@@ -108,8 +108,8 @@ R6
 R7
 !i10b 1
 R8
-Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd|
-Z22 !s107 C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd|
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd|
+Z22 !s107 C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd|
 !i113 1
 R11
 R12
@@ -117,7 +117,7 @@ Artl
 R1
 R2
 DEx4 work 4 lfsr 0 22 JKCHPF@_[QYTUX=8?:O1X2
-!i122 324
+!i122 1
 l48
 L30 60
 V>W:gZ;T_>0Q_YID51O59e1
@@ -132,58 +132,15 @@ R22
 !i113 1
 R11
 R12
-Elfsr_python_tb
-Z23 w1653749530
+Elfsr_tb
+Z23 w1653748626
 Z24 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 R1
 R2
-!i122 327
+!i122 3
 R3
-Z25 8C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_GEN_BY_PHYTON_tb.vhd
-Z26 FC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_GEN_BY_PHYTON_tb.vhd
-l0
-L6 1
-V4bUMZHaR1oVLNf@nQ:<252
-!s100 US_gA>0TJ_P`I@Bkmf]JQ1
-R6
-32
-R7
-!i10b 1
-R8
-Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_GEN_BY_PHYTON_tb.vhd|
-Z28 !s107 C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_GEN_BY_PHYTON_tb.vhd|
-!i113 1
-R11
-R12
-Artl
-R24
-R1
-R2
-Z29 DEx4 work 14 lfsr_python_tb 0 22 4bUMZHaR1oVLNf@nQ:<252
-!i122 327
-l43
-Z30 L9 98
-V_<gKMMc2DI4L?IXNNj^F21
-!s100 ZKRa03oDAL_21M=MiP;b=1
-R6
-32
-R7
-!i10b 1
-R8
-R27
-R28
-!i113 1
-R11
-R12
-Elfsr_tb
-Z31 w1653748626
-R24
-R1
-R2
-!i122 326
-R3
-Z32 8C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd
-Z33 FC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd
+Z25 8C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd
+Z26 FC:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd
 l0
 L6 1
 V?CAfCNQF8=d_`B]W7]TnL1
@@ -193,8 +150,8 @@ R6
 R7
 !i10b 1
 R8
-Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd|
-Z35 !s107 C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd|
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd|
+!s107 C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd|
 !i113 1
 R11
 R12
@@ -203,7 +160,7 @@ R24
 R1
 R2
 DEx4 work 7 lfsr_tb 0 22 ?CAfCNQF8=d_`B]W7]TnL1
-!i122 326
+!i122 3
 l42
 L9 78
 V]IT_:[K=hXfQ=T3YcYnYh1
@@ -213,51 +170,8 @@ R6
 R7
 !i10b 1
 R8
-R34
-R35
-!i113 1
-R11
-R12
-Elfsr_wseed_tb
-Z36 w1653743046
-R24
-R1
-R2
-!i122 281
-R3
-Z37 8C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
-Z38 FC:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd
-l0
-L6 1
-Voc=J1<KbVSo;i2KFjP0j>0
-!s100 H5XJcb7@c@b^`]:DXJ[c93
-R6
-32
-Z39 !s110 1653747609
-!i10b 1
-Z40 !s108 1653747609.000000
-Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd|
-Z42 !s107 C:/Users/Biagio/Desktop/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_wSEED_tb.vhd|
-!i113 1
-R11
-R12
-Artl
-R24
-R1
-R2
-DEx4 work 13 lfsr_wseed_tb 0 22 oc=J1<KbVSo;i2KFjP0j>0
-!i122 281
-l43
-L9 93
-VIVfERkF8jVRMNEaPnG8>71
-!s100 OGWiGZJj[_OJ8i;GBPPFI0
-R6
-32
-R39
-!i10b 1
-R40
-R41
-R42
+R27
+Z28 !s107 C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/tb/LFSR_tb.vhd|
 !i113 1
 R11
 R12
