@@ -17,14 +17,14 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 6988
+INFO: [Synth 8-7075] Helper process launched with PID 23944
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'LFSR' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:30]
 	Parameter Nbit bound to: 16 - type: integer 
 	Parameter Nbit bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'DFF_N' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF_N.vhd:8' bound to instance 'init_reg' of component 'DFF_N' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:66]
+INFO: [Synth 8-3491] module 'DFF_N' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF_N.vhd:8' bound to instance 'init_reg' of component 'DFF_N' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:67]
 INFO: [Synth 8-638] synthesizing module 'DFF_N' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF_N.vhd:22]
 	Parameter Nbit bound to: 16 - type: integer 
 INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'i_DFF' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF_N.vhd:35]
@@ -46,36 +46,37 @@ INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneri
 INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'i_DFF' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF_N.vhd:35]
 INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'i_DFF' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF_N.vhd:35]
 INFO: [Synth 8-256] done synthesizing module 'DFF_N' (2#1) [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF_N.vhd:22]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FF0' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:78]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
-INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFN' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'seed_load_reg' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:76]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FF0' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:87]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFI' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:96]
+INFO: [Synth 8-3491] module 'DFF' declared at 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/DFF.vhd:8' bound to instance 'FFN' of component 'DFF' [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:105]
 INFO: [Synth 8-256] done synthesizing module 'LFSR' (3#1) [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/src/LFSR.vhd:30]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1001.953 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -84,29 +85,29 @@ Parsing XDC File [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Proj
 Finished Parsing XDC File [C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.srcs/constrs_1/new/clk_constraint.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1001.953 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -115,7 +116,7 @@ Detailed RTL Component Info :
 +---XORs : 
 	   4 Input      1 Bit         XORs := 1     
 +---Registers : 
-	                1 Bit    Registers := 32    
+	                1 Bit    Registers := 33    
 +---Muxes : 
 	   2 Input   16 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
@@ -134,25 +135,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1002.234 ; gain = 0.000
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1001.953 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -170,37 +171,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1002.629 ; gain = 0.395
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1002.273 ; gain = 0.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1002.629 ; gain = 0.395
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1002.273 ; gain = 0.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1002.629 ; gain = 0.395
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1002.273 ; gain = 0.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1002.629 ; gain = 0.395
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1002.273 ; gain = 0.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1002.629 ; gain = 0.395
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1002.273 ; gain = 0.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1002.629 ; gain = 0.395
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1002.273 ; gain = 0.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -219,26 +220,26 @@ Report Cell Usage:
 |1     |LUT1 |     1|
 |2     |LUT3 |    15|
 |3     |LUT6 |     1|
-|4     |FDCE |    32|
+|4     |FDCE |    33|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1002.629 ; gain = 0.395
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1002.273 ; gain = 0.320
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 1002.629 ; gain = 0.395
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 1002.629 ; gain = 0.395
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1002.273 ; gain = 0.320
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1002.273 ; gain = 0.320
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1002.629 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1013.203 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1017.711 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1023.816 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-51 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+52 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1017.711 ; gain = 15.477
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 1023.816 ; gain = 21.863
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.runs/synth_1_copy_1/LFSR.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file LFSR_utilization_synth.rpt -pb LFSR_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jun 16 04:03:06 2022...
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 16 16:10:33 2022...

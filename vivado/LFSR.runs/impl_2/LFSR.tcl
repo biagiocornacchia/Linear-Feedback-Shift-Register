@@ -125,6 +125,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
+  set_param synth.incrementalSynthesisCache C:/Users/Biagio/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-3236-OSPREY/incrSyn
   reset_param project.defaultXPMLibraries 
   open_checkpoint {C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.runs/impl_2/LFSR.dcp}
   set_property webtalk.parent_dir {C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.cache/wt} [current_project]

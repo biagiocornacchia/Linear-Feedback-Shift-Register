@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Thu Jun 16 04:04:50 2022
+| Date         : Thu Jun 16 16:13:40 2022
 | Host         : OSPREY running 64-bit major release  (build 9200)
 | Command      : report_utilization -file LFSR_utilization_placed.rpt -pb LFSR_utilization_placed.pb
 | Design       : LFSR
@@ -34,8 +34,8 @@ Table of Contents
 | Slice LUTs              |   17 |     0 |     17600 |  0.10 |
 |   LUT as Logic          |   17 |     0 |     17600 |  0.10 |
 |   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
-| Slice Registers         |   32 |     0 |     35200 |  0.09 |
-|   Register as Flip Flop |   32 |     0 |     35200 |  0.09 |
+| Slice Registers         |   33 |     0 |     35200 |  0.09 |
+|   Register as Flip Flop |   33 |     0 |     35200 |  0.09 |
 |   Register as Latch     |    0 |     0 |     35200 |  0.00 |
 | F7 Muxes                |    0 |     0 |      8800 |  0.00 |
 | F8 Muxes                |    0 |     0 |      4400 |  0.00 |
@@ -55,7 +55,7 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 32    |          Yes |           - |        Reset |
+| 33    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 0     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -77,11 +77,11 @@ Table of Contents
 | LUT as Memory                              |    0 |     0 |      6000 |  0.00 |
 |   LUT as Distributed RAM                   |    0 |     0 |           |       |
 |   LUT as Shift Register                    |    0 |     0 |           |       |
-| Slice Registers                            |   32 |     0 |     35200 |  0.09 |
+| Slice Registers                            |   33 |     0 |     35200 |  0.09 |
 |   Register driven from within the Slice    |   16 |       |           |       |
-|   Register driven from outside the Slice   |   16 |       |           |       |
+|   Register driven from outside the Slice   |   17 |       |           |       |
 |     LUT in front of the register is unused |    0 |       |           |       |
-|     LUT in front of the register is used   |   16 |       |           |       |
+|     LUT in front of the register is used   |   17 |       |           |       |
 | Unique Control Sets                        |    1 |       |      4400 |  0.02 |
 +--------------------------------------------+------+-------+-----------+-------+
 * * Note: Available Control Sets calculated as Slice * 1, Review the Control Sets Report for more information regarding control sets.
@@ -172,7 +172,7 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     |   32 |        Flop & Latch |
+| FDCE     |   33 |        Flop & Latch |
 | LUT3     |   15 |                 LUT |
 | LUT6     |    1 |                 LUT |
 | LUT1     |    1 |                 LUT |

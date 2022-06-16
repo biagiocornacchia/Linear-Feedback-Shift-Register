@@ -1,6 +1,6 @@
 import filecmp
 
-seed = 0b1100101011000110
+seed = 0b1101101011000000
 lfsr = seed
 period = 0
 outputstream = 0
@@ -22,6 +22,7 @@ with open("LFSR_OUTPUT_STREAM_PYTHON.txt", "w") as f:
     while True:
         # feedback: x^16 + x^14 + x^13 + x^11 + 1
         bit = (lfsr ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5)) & 1
+        # Shifting the stream to the right (1 position >>) and concatenating the feedback bit to the head of the bit stream
         lfsr = (lfsr >> 1) | (bit << 15)
         period += 1
 
