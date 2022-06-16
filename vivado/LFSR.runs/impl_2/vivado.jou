@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Wed Jun 15 22:16:41 2022
-# Process ID: 8260
+# Start of session at: Thu Jun 16 04:04:13 2022
+# Process ID: 21000
 # Current directory: C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.runs/impl_2
 # Command line: vivado.exe -log LFSR.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source LFSR.tcl -notrace
 # Log file: C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.runs/impl_2/LFSR.vdi

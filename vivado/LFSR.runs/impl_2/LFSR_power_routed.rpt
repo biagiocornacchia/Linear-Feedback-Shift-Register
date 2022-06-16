@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Wed Jun 15 22:17:34 2022
+| Date             : Thu Jun 16 04:05:07 2022
 | Host             : OSPREY running 64-bit major release  (build 9200)
 | Command          : report_power -file LFSR_power_routed.rpt -pb LFSR_power_summary_routed.pb -rpx LFSR_power_routed.rpx
 | Design           : LFSR
@@ -53,11 +53,11 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |       49 |       --- |             --- |
+| Slice Logic    |    <0.001 |       81 |       --- |             --- |
 |   LUT as Logic |    <0.001 |       17 |     17600 |            0.10 |
-|   Register     |    <0.001 |       16 |     35200 |            0.05 |
-|   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |    <0.001 |       17 |       --- |             --- |
+|   Register     |    <0.001 |       32 |     35200 |            0.09 |
+|   Others       |     0.000 |       32 |       --- |             --- |
+| Signals        |    <0.001 |       33 |       --- |             --- |
 | Static Power   |     0.090 |          |           |                 |
 | Total          |     0.090 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+

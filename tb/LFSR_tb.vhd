@@ -60,26 +60,31 @@ architecture rtl of LFSR_tb is
     stimuli: process(clk_tb, reset_n_tb) 
 
     variable bit_to_write : line;
+    variable t : integer := 0;
     
     begin
 
         if(reset_n_tb = '0') then
             seed_tb <= "1100101011000110";
-            -- Setting the initial value
-            seed_load_tb <= '1';
+            seed_load_tb <= '1'; -- setting the initial value
+            t := 0;
         elsif(rising_edge(clk_tb)) then
-            seed_load_tb <= '0';
 
-            -- When the current state is equal to the initial status (seed) it means that the LFSR will start generating the same output bits
-            if(state_tb = seed_tb and seed_load_tb = '0') then
-                end_sim <= '0';
+            if (t > 0)  then
+                seed_load_tb <= '0';
+            else 
+               seed_load_tb <= '1';
             end if;
 
-            if(seed_load_tb = '0') then
+            -- When the current state is equal to the initial status (seed) it means that the LFSR will start generating the same output bits
+            if(state_tb = seed_tb and t > 2) then
+                end_sim <= '0';
+            elsif(seed_load_tb = '0') then
                 WRITE(bit_to_write, output_bit_tb);
                 WRITEline(LFSR_OUTPUT, bit_to_write);  
             end if;
 
+            t := t + 1;
         end if;
     end process;       
 

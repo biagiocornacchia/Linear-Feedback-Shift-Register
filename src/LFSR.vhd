@@ -28,8 +28,9 @@ end LFSR;
 -------------------------------
 
 architecture rtl of LFSR is
-
-    -- 16 instances of D flip-flop are used to generate a shift register 
+    --------------------------------------------------------
+    -- D flip-flop used to generate a 16-bit shift register
+    --------------------------------------------------------
     component DFF
         port (
             clk     : in    std_logic;
@@ -39,13 +40,37 @@ architecture rtl of LFSR is
         );
     end component DFF;
 
-    signal feedback_bit : std_logic; -- Signal used to generate the feedback bit (the bit obtained xoring the 11th, 13th 14th and 16th bit of the current status)
+    --------------------------------------------------------
+    -- D flip-flop 16 bit used to contain the initial value
+    --------------------------------------------------------
+    component DFF_N is
+        generic(Nbit : positive := 16);
+        port(
+            clk     : in std_logic;
+            reset_n : in std_logic;
+            d_in    : in std_logic_vector(0 to Nbit-1);
+            q_out   : out std_logic_vector(0 to Nbit-1)
+        );
+    end component DFF_N;
+
+    signal feedback_bit : std_logic; -- signal used to generate the feedback bit (the bit obtained xoring the 11th, 13th 14th and 16th bit of the current status)
     signal output_bit_s : std_logic;
     
     signal d_in : std_logic_vector (0 to Nbit-1);
     signal q_s  : std_logic_vector (0 to Nbit-2);
 
+    signal loaded_seed   : std_logic_vector (0 to Nbit-1);
+
 begin
+
+    init_reg : DFF_N
+    generic map(Nbit => 16)
+    port map(
+        clk     =>  clk,
+        reset_n =>  reset_n,
+        d_in    =>  seed,
+        q_out   =>  loaded_seed
+    );
 
     GEN: for i in 0 to Nbit-1 generate
         -- FIRST STAGE
@@ -79,11 +104,14 @@ begin
 
     -- NOTE:
     -- At first time the feedback bit must be obtained using the seed which is the first state of the LFSR
-    d_in <= seed(0 to 15) when seed_load = '1' else feedback_bit & q_s(0 to Nbit-2);
+    d_in <= loaded_seed(0 to 15) when seed_load = '1' else feedback_bit & q_s(0 to Nbit-2);
+    feedback_bit <= (loaded_seed(15) xor loaded_seed(13)) xor loaded_seed(12) xor loaded_seed(10) when seed_load = '1' else (output_bit_s xor q_s(13)) xor q_s(12) xor q_s(10);
 
-    feedback_bit <= (seed(15) xor seed(13)) xor seed(12) xor seed(10) when seed_load = '1' else (output_bit_s xor q_s(13)) xor q_s(12) xor q_s(10);
-    
-    state <= d_in;  -- Updating the current status
+    state <= q_s & output_bit_s; -- Updating the current status
     output_bit <= output_bit_s;
+    
+    --state <= d_in; -- THIS STATEMENT IS VALID BECAUSE IT IS MADE OUTSIDE A PROCESS SO I'M JUST LINK WIRES! 
+                     -- IF IT WAS MADE INSIDE A PROCESS STATE WOULD HAVE PICK THE OLD VALUE OF D_IN!
+                     -- BUT IN THIS CASE I HAVE A CONTINUOUS ASSIGNMENT
     
 end rtl;

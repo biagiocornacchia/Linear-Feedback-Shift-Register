@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Jun 15 22:17:34 2022
+| Date         : Thu Jun 16 04:05:07 2022
 | Host         : OSPREY running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file LFSR_timing_summary_routed.rpt -pb LFSR_timing_summary_routed.pb -rpx LFSR_timing_summary_routed.rpx -warn_on_violation
 | Design       : LFSR
@@ -128,7 +128,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      6.469        0.000                      0                   16        0.159        0.000                      0                   16        3.500        0.000                       0                    16  
+      6.488        0.000                      0                   16        0.143        0.000                      0                   16        3.500        0.000                       0                    32  
 
 
 All user specified timing constraints are met.
@@ -151,7 +151,7 @@ LFSR_clk  {0.000 4.000}        8.000           125.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-LFSR_clk            6.469        0.000                      0                   16        0.159        0.000                      0                   16        3.500        0.000                       0                    16  
+LFSR_clk            6.488        0.000                      0                   16        0.143        0.000                      0                   16        3.500        0.000                       0                    32  
 
 
 ------------------------------------------------------------------------------------------------
@@ -182,23 +182,23 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  LFSR_clk
   To Clock:  LFSR_clk
 
-Setup :            0  Failing Endpoints,  Worst Slack        6.469ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.159ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        6.488ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.143ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             6.469ns  (required time - arrival time)
-  Source:                 GEN[1].INTERNAL.FFI/q_reg/C
+Slack (MET) :             6.488ns  (required time - arrival time)
+  Source:                 GEN[9].INTERNAL.FFI/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[2].INTERNAL.FFI/q_reg/D
+  Destination:            GEN[10].INTERNAL.FFI/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        1.524ns  (logic 0.580ns (38.050%)  route 0.944ns (61.950%))
+  Data Path Delay:        1.457ns  (logic 0.642ns (44.072%)  route 0.815ns (55.928%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
@@ -215,39 +215,39 @@ Slack (MET) :             6.469ns  (required time - arrival time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.973     0.973    GEN[1].INTERNAL.FFI/clk
-    SLICE_X27Y50         FDCE                                         r  GEN[1].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.973     0.973    GEN[9].INTERNAL.FFI/clk
+    SLICE_X8Y13          FDCE                                         r  GEN[9].INTERNAL.FFI/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X27Y50         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  GEN[1].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.944     2.373    GEN[1].INTERNAL.FFI/q_reg_n_0
-    SLICE_X28Y50         LUT3 (Prop_lut3_I1_O)        0.124     2.497 r  GEN[1].INTERNAL.FFI/state[2]_INST_0/O
-                         net (fo=1, routed)           0.000     2.497    GEN[2].INTERNAL.FFI/state[0]
-    SLICE_X28Y50         FDCE                                         r  GEN[2].INTERNAL.FFI/q_reg/D
+    SLICE_X8Y13          FDCE (Prop_fdce_C_Q)         0.518     1.491 r  GEN[9].INTERNAL.FFI/q_reg/Q
+                         net (fo=1, routed)           0.815     2.306    init_reg/GEN[10].i_DFF/state[0]
+    SLICE_X7Y13          LUT3 (Prop_lut3_I2_O)        0.124     2.430 r  init_reg/GEN[10].i_DFF/q_i_1__5/O
+                         net (fo=1, routed)           0.000     2.430    GEN[10].INTERNAL.FFI/q_reg_0
+    SLICE_X7Y13          FDCE                                         r  GEN[10].INTERNAL.FFI/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       8.000     8.000 r  
                                                       0.000     8.000 r  clk (IN)
-                         net (fo=15, unset)           0.924     8.924    GEN[2].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[2].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.924     8.924    GEN[10].INTERNAL.FFI/clk
+    SLICE_X7Y13          FDCE                                         r  GEN[10].INTERNAL.FFI/q_reg/C
                          clock pessimism              0.000     8.924    
                          clock uncertainty           -0.035     8.889    
-    SLICE_X28Y50         FDCE (Setup_fdce_C_D)        0.077     8.966    GEN[2].INTERNAL.FFI/q_reg
+    SLICE_X7Y13          FDCE (Setup_fdce_C_D)        0.029     8.918    GEN[10].INTERNAL.FFI/q_reg
   -------------------------------------------------------------------
-                         required time                          8.966    
-                         arrival time                          -2.497    
+                         required time                          8.918    
+                         arrival time                          -2.430    
   -------------------------------------------------------------------
-                         slack                                  6.469    
+                         slack                                  6.488    
 
-Slack (MET) :             6.498ns  (required time - arrival time)
-  Source:                 GEN[5].INTERNAL.FFI/q_reg/C
+Slack (MET) :             6.500ns  (required time - arrival time)
+  Source:                 GEN[0].FIRST.FF0/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[6].INTERNAL.FFI/q_reg/D
+  Destination:            GEN[1].INTERNAL.FFI/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        1.450ns  (logic 0.642ns (44.287%)  route 0.808ns (55.713%))
+  Data Path Delay:        1.447ns  (logic 0.642ns (44.377%)  route 0.805ns (55.623%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
@@ -264,137 +264,39 @@ Slack (MET) :             6.498ns  (required time - arrival time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.973     0.973    GEN[5].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[5].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.973     0.973    GEN[0].FIRST.FF0/clk
+    SLICE_X8Y13          FDCE                                         r  GEN[0].FIRST.FF0/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y50         FDCE (Prop_fdce_C_Q)         0.518     1.491 r  GEN[5].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.808     2.299    GEN[5].INTERNAL.FFI/q_reg_n_0
-    SLICE_X27Y50         LUT3 (Prop_lut3_I1_O)        0.124     2.423 r  GEN[5].INTERNAL.FFI/state[6]_INST_0/O
-                         net (fo=1, routed)           0.000     2.423    GEN[6].INTERNAL.FFI/state[0]
-    SLICE_X27Y50         FDCE                                         r  GEN[6].INTERNAL.FFI/q_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock LFSR_clk rise edge)
-                                                      8.000     8.000 r  
-                                                      0.000     8.000 r  clk (IN)
-                         net (fo=15, unset)           0.924     8.924    GEN[6].INTERNAL.FFI/clk
-    SLICE_X27Y50         FDCE                                         r  GEN[6].INTERNAL.FFI/q_reg/C
-                         clock pessimism              0.000     8.924    
-                         clock uncertainty           -0.035     8.889    
-    SLICE_X27Y50         FDCE (Setup_fdce_C_D)        0.032     8.921    GEN[6].INTERNAL.FFI/q_reg
-  -------------------------------------------------------------------
-                         required time                          8.921    
-                         arrival time                          -2.423    
-  -------------------------------------------------------------------
-                         slack                                  6.498    
-
-Slack (MET) :             6.505ns  (required time - arrival time)
-  Source:                 GEN[11].INTERNAL.FFI/q_reg/C
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[12].INTERNAL.FFI/q_reg/D
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             LFSR_clk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        1.442ns  (logic 0.580ns (40.211%)  route 0.862ns (59.789%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
-    Source Clock Delay      (SCD):    0.973ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock LFSR_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.973     0.973    GEN[11].INTERNAL.FFI/clk
-    SLICE_X26Y50         FDCE                                         r  GEN[11].INTERNAL.FFI/q_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X26Y50         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  GEN[11].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.862     2.291    GEN[11].INTERNAL.FFI/q_reg_n_0
-    SLICE_X26Y50         LUT3 (Prop_lut3_I1_O)        0.124     2.415 r  GEN[11].INTERNAL.FFI/state[12]_INST_0/O
-                         net (fo=1, routed)           0.000     2.415    GEN[12].INTERNAL.FFI/state[0]
-    SLICE_X26Y50         FDCE                                         r  GEN[12].INTERNAL.FFI/q_reg/D
+    SLICE_X8Y13          FDCE (Prop_fdce_C_Q)         0.518     1.491 r  GEN[0].FIRST.FF0/q_reg/Q
+                         net (fo=1, routed)           0.805     2.296    init_reg/GEN[1].i_DFF/state[0]
+    SLICE_X7Y13          LUT3 (Prop_lut3_I2_O)        0.124     2.420 r  init_reg/GEN[1].i_DFF/q_i_1__14/O
+                         net (fo=1, routed)           0.000     2.420    GEN[1].INTERNAL.FFI/q_reg_0
+    SLICE_X7Y13          FDCE                                         r  GEN[1].INTERNAL.FFI/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       8.000     8.000 r  
                                                       0.000     8.000 r  clk (IN)
-                         net (fo=15, unset)           0.924     8.924    GEN[12].INTERNAL.FFI/clk
-    SLICE_X26Y50         FDCE                                         r  GEN[12].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.924     8.924    GEN[1].INTERNAL.FFI/clk
+    SLICE_X7Y13          FDCE                                         r  GEN[1].INTERNAL.FFI/q_reg/C
                          clock pessimism              0.000     8.924    
                          clock uncertainty           -0.035     8.889    
-    SLICE_X26Y50         FDCE (Setup_fdce_C_D)        0.031     8.920    GEN[12].INTERNAL.FFI/q_reg
+    SLICE_X7Y13          FDCE (Setup_fdce_C_D)        0.031     8.920    GEN[1].INTERNAL.FFI/q_reg
   -------------------------------------------------------------------
                          required time                          8.920    
-                         arrival time                          -2.415    
+                         arrival time                          -2.420    
   -------------------------------------------------------------------
-                         slack                                  6.505    
+                         slack                                  6.500    
 
-Slack (MET) :             6.511ns  (required time - arrival time)
-  Source:                 GEN[8].INTERNAL.FFI/q_reg/C
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[9].INTERNAL.FFI/q_reg/D
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             LFSR_clk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        1.436ns  (logic 0.580ns (40.379%)  route 0.856ns (59.621%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
-    Source Clock Delay      (SCD):    0.973ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock LFSR_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.973     0.973    GEN[8].INTERNAL.FFI/clk
-    SLICE_X27Y51         FDCE                                         r  GEN[8].INTERNAL.FFI/q_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X27Y51         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  GEN[8].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.856     2.285    GEN[8].INTERNAL.FFI/q_reg_n_0
-    SLICE_X26Y51         LUT3 (Prop_lut3_I1_O)        0.124     2.409 r  GEN[8].INTERNAL.FFI/state[9]_INST_0/O
-                         net (fo=1, routed)           0.000     2.409    GEN[9].INTERNAL.FFI/state[0]
-    SLICE_X26Y51         FDCE                                         r  GEN[9].INTERNAL.FFI/q_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock LFSR_clk rise edge)
-                                                      8.000     8.000 r  
-                                                      0.000     8.000 r  clk (IN)
-                         net (fo=15, unset)           0.924     8.924    GEN[9].INTERNAL.FFI/clk
-    SLICE_X26Y51         FDCE                                         r  GEN[9].INTERNAL.FFI/q_reg/C
-                         clock pessimism              0.000     8.924    
-                         clock uncertainty           -0.035     8.889    
-    SLICE_X26Y51         FDCE (Setup_fdce_C_D)        0.031     8.920    GEN[9].INTERNAL.FFI/q_reg
-  -------------------------------------------------------------------
-                         required time                          8.920    
-                         arrival time                          -2.409    
-  -------------------------------------------------------------------
-                         slack                                  6.511    
-
-Slack (MET) :             6.520ns  (required time - arrival time)
-  Source:                 GEN[15].LAST.FFN/q_reg/C
+Slack (MET) :             6.544ns  (required time - arrival time)
+  Source:                 GEN[10].INTERNAL.FFI/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            GEN[0].FIRST.FF0/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        1.425ns  (logic 0.580ns (40.691%)  route 0.845ns (59.309%))
+  Data Path Delay:        1.449ns  (logic 0.580ns (40.019%)  route 0.869ns (59.981%))
   Logic Levels:           1  (LUT6=1)
   Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
@@ -411,39 +313,39 @@ Slack (MET) :             6.520ns  (required time - arrival time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.973     0.973    GEN[15].LAST.FFN/clk
-    SLICE_X27Y50         FDCE                                         r  GEN[15].LAST.FFN/q_reg/C
+                         net (fo=31, unset)           0.973     0.973    GEN[10].INTERNAL.FFI/clk
+    SLICE_X7Y13          FDCE                                         r  GEN[10].INTERNAL.FFI/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X27Y50         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  GEN[15].LAST.FFN/q_reg/Q
-                         net (fo=1, routed)           0.845     2.274    GEN[12].INTERNAL.FFI/output_bit
-    SLICE_X26Y50         LUT6 (Prop_lut6_I3_O)        0.124     2.398 r  GEN[12].INTERNAL.FFI/state[0]_INST_0/O
-                         net (fo=1, routed)           0.000     2.398    GEN[0].FIRST.FF0/state[0]
-    SLICE_X26Y50         FDCE                                         r  GEN[0].FIRST.FF0/q_reg/D
+    SLICE_X7Y13          FDCE (Prop_fdce_C_Q)         0.456     1.429 r  GEN[10].INTERNAL.FFI/q_reg/Q
+                         net (fo=2, routed)           0.869     2.298    init_reg/GEN[0].i_DFF/state[3]
+    SLICE_X8Y13          LUT6 (Prop_lut6_I5_O)        0.124     2.422 r  init_reg/GEN[0].i_DFF/q_i_1/O
+                         net (fo=1, routed)           0.000     2.422    GEN[0].FIRST.FF0/d
+    SLICE_X8Y13          FDCE                                         r  GEN[0].FIRST.FF0/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       8.000     8.000 r  
                                                       0.000     8.000 r  clk (IN)
-                         net (fo=15, unset)           0.924     8.924    GEN[0].FIRST.FF0/clk
-    SLICE_X26Y50         FDCE                                         r  GEN[0].FIRST.FF0/q_reg/C
+                         net (fo=31, unset)           0.924     8.924    GEN[0].FIRST.FF0/clk
+    SLICE_X8Y13          FDCE                                         r  GEN[0].FIRST.FF0/q_reg/C
                          clock pessimism              0.000     8.924    
                          clock uncertainty           -0.035     8.889    
-    SLICE_X26Y50         FDCE (Setup_fdce_C_D)        0.029     8.918    GEN[0].FIRST.FF0/q_reg
+    SLICE_X8Y13          FDCE (Setup_fdce_C_D)        0.077     8.966    GEN[0].FIRST.FF0/q_reg
   -------------------------------------------------------------------
-                         required time                          8.918    
-                         arrival time                          -2.398    
+                         required time                          8.966    
+                         arrival time                          -2.422    
   -------------------------------------------------------------------
-                         slack                                  6.520    
+                         slack                                  6.544    
 
-Slack (MET) :             6.568ns  (required time - arrival time)
-  Source:                 GEN[6].INTERNAL.FFI/q_reg/C
+Slack (MET) :             6.544ns  (required time - arrival time)
+  Source:                 init_reg/GEN[11].i_DFF/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[7].INTERNAL.FFI/q_reg/D
+  Destination:            GEN[11].INTERNAL.FFI/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        1.377ns  (logic 0.580ns (42.115%)  route 0.797ns (57.885%))
+  Data Path Delay:        1.453ns  (logic 0.779ns (53.622%)  route 0.674ns (46.378%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
@@ -460,137 +362,39 @@ Slack (MET) :             6.568ns  (required time - arrival time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.973     0.973    GEN[6].INTERNAL.FFI/clk
-    SLICE_X27Y50         FDCE                                         r  GEN[6].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.973     0.973    init_reg/GEN[11].i_DFF/clk
+    SLICE_X8Y13          FDCE                                         r  init_reg/GEN[11].i_DFF/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X27Y50         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  GEN[6].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.797     2.226    GEN[6].INTERNAL.FFI/q_reg_n_0
-    SLICE_X27Y51         LUT3 (Prop_lut3_I1_O)        0.124     2.350 r  GEN[6].INTERNAL.FFI/state[7]_INST_0/O
-                         net (fo=1, routed)           0.000     2.350    GEN[7].INTERNAL.FFI/state[0]
-    SLICE_X27Y51         FDCE                                         r  GEN[7].INTERNAL.FFI/q_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock LFSR_clk rise edge)
-                                                      8.000     8.000 r  
-                                                      0.000     8.000 r  clk (IN)
-                         net (fo=15, unset)           0.924     8.924    GEN[7].INTERNAL.FFI/clk
-    SLICE_X27Y51         FDCE                                         r  GEN[7].INTERNAL.FFI/q_reg/C
-                         clock pessimism              0.000     8.924    
-                         clock uncertainty           -0.035     8.889    
-    SLICE_X27Y51         FDCE (Setup_fdce_C_D)        0.029     8.918    GEN[7].INTERNAL.FFI/q_reg
-  -------------------------------------------------------------------
-                         required time                          8.918    
-                         arrival time                          -2.350    
-  -------------------------------------------------------------------
-                         slack                                  6.568    
-
-Slack (MET) :             6.647ns  (required time - arrival time)
-  Source:                 GEN[3].INTERNAL.FFI/q_reg/C
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[4].INTERNAL.FFI/q_reg/D
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             LFSR_clk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        1.348ns  (logic 0.642ns (47.613%)  route 0.706ns (52.387%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
-    Source Clock Delay      (SCD):    0.973ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock LFSR_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.973     0.973    GEN[3].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[3].INTERNAL.FFI/q_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X28Y50         FDCE (Prop_fdce_C_Q)         0.518     1.491 r  GEN[3].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.706     2.197    GEN[3].INTERNAL.FFI/q_reg_n_0
-    SLICE_X28Y50         LUT3 (Prop_lut3_I1_O)        0.124     2.321 r  GEN[3].INTERNAL.FFI/state[4]_INST_0/O
-                         net (fo=1, routed)           0.000     2.321    GEN[4].INTERNAL.FFI/state[0]
-    SLICE_X28Y50         FDCE                                         r  GEN[4].INTERNAL.FFI/q_reg/D
+    SLICE_X8Y13          FDCE (Prop_fdce_C_Q)         0.478     1.451 r  init_reg/GEN[11].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.674     2.125    init_reg/GEN[11].i_DFF/q_reg_n_0
+    SLICE_X8Y13          LUT3 (Prop_lut3_I0_O)        0.301     2.426 r  init_reg/GEN[11].i_DFF/q_i_1__4/O
+                         net (fo=1, routed)           0.000     2.426    GEN[11].INTERNAL.FFI/q_reg_0
+    SLICE_X8Y13          FDCE                                         r  GEN[11].INTERNAL.FFI/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       8.000     8.000 r  
                                                       0.000     8.000 r  clk (IN)
-                         net (fo=15, unset)           0.924     8.924    GEN[4].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[4].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.924     8.924    GEN[11].INTERNAL.FFI/clk
+    SLICE_X8Y13          FDCE                                         r  GEN[11].INTERNAL.FFI/q_reg/C
                          clock pessimism              0.000     8.924    
                          clock uncertainty           -0.035     8.889    
-    SLICE_X28Y50         FDCE (Setup_fdce_C_D)        0.079     8.968    GEN[4].INTERNAL.FFI/q_reg
+    SLICE_X8Y13          FDCE (Setup_fdce_C_D)        0.081     8.970    GEN[11].INTERNAL.FFI/q_reg
   -------------------------------------------------------------------
-                         required time                          8.968    
-                         arrival time                          -2.321    
+                         required time                          8.970    
+                         arrival time                          -2.426    
   -------------------------------------------------------------------
-                         slack                                  6.647    
+                         slack                                  6.544    
 
-Slack (MET) :             6.678ns  (required time - arrival time)
-  Source:                 GEN[14].INTERNAL.FFI/q_reg/C
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[15].LAST.FFN/q_reg/D
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             LFSR_clk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        1.269ns  (logic 0.580ns (45.692%)  route 0.689ns (54.308%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
-    Source Clock Delay      (SCD):    0.973ns
-    Clock Pessimism Removal (CPR):    0.000ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock LFSR_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.973     0.973    GEN[14].INTERNAL.FFI/clk
-    SLICE_X27Y50         FDCE                                         r  GEN[14].INTERNAL.FFI/q_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X27Y50         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  GEN[14].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.689     2.118    GEN[14].INTERNAL.FFI/q_reg_n_0
-    SLICE_X27Y50         LUT3 (Prop_lut3_I1_O)        0.124     2.242 r  GEN[14].INTERNAL.FFI/state[15]_INST_0/O
-                         net (fo=1, routed)           0.000     2.242    GEN[15].LAST.FFN/state[0]
-    SLICE_X27Y50         FDCE                                         r  GEN[15].LAST.FFN/q_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock LFSR_clk rise edge)
-                                                      8.000     8.000 r  
-                                                      0.000     8.000 r  clk (IN)
-                         net (fo=15, unset)           0.924     8.924    GEN[15].LAST.FFN/clk
-    SLICE_X27Y50         FDCE                                         r  GEN[15].LAST.FFN/q_reg/C
-                         clock pessimism              0.000     8.924    
-                         clock uncertainty           -0.035     8.889    
-    SLICE_X27Y50         FDCE (Setup_fdce_C_D)        0.031     8.920    GEN[15].LAST.FFN/q_reg
-  -------------------------------------------------------------------
-                         required time                          8.920    
-                         arrival time                          -2.242    
-  -------------------------------------------------------------------
-                         slack                                  6.678    
-
-Slack (MET) :             6.684ns  (required time - arrival time)
-  Source:                 GEN[4].INTERNAL.FFI/q_reg/C
+Slack (MET) :             6.544ns  (required time - arrival time)
+  Source:                 init_reg/GEN[5].i_DFF/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            GEN[5].INTERNAL.FFI/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        1.311ns  (logic 0.642ns (48.966%)  route 0.669ns (51.034%))
+  Data Path Delay:        1.453ns  (logic 0.779ns (53.622%)  route 0.674ns (46.378%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
@@ -607,39 +411,186 @@ Slack (MET) :             6.684ns  (required time - arrival time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.973     0.973    GEN[4].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[4].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.973     0.973    init_reg/GEN[5].i_DFF/clk
+    SLICE_X6Y13          FDCE                                         r  init_reg/GEN[5].i_DFF/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y50         FDCE (Prop_fdce_C_Q)         0.518     1.491 r  GEN[4].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.669     2.160    GEN[4].INTERNAL.FFI/q_reg_n_0
-    SLICE_X28Y50         LUT3 (Prop_lut3_I1_O)        0.124     2.284 r  GEN[4].INTERNAL.FFI/state[5]_INST_0/O
-                         net (fo=1, routed)           0.000     2.284    GEN[5].INTERNAL.FFI/state[0]
-    SLICE_X28Y50         FDCE                                         r  GEN[5].INTERNAL.FFI/q_reg/D
+    SLICE_X6Y13          FDCE (Prop_fdce_C_Q)         0.478     1.451 r  init_reg/GEN[5].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.674     2.125    init_reg/GEN[5].i_DFF/q_reg_n_0
+    SLICE_X6Y13          LUT3 (Prop_lut3_I0_O)        0.301     2.426 r  init_reg/GEN[5].i_DFF/q_i_1__10/O
+                         net (fo=1, routed)           0.000     2.426    GEN[5].INTERNAL.FFI/q_reg_0
+    SLICE_X6Y13          FDCE                                         r  GEN[5].INTERNAL.FFI/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       8.000     8.000 r  
                                                       0.000     8.000 r  clk (IN)
-                         net (fo=15, unset)           0.924     8.924    GEN[5].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[5].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.924     8.924    GEN[5].INTERNAL.FFI/clk
+    SLICE_X6Y13          FDCE                                         r  GEN[5].INTERNAL.FFI/q_reg/C
                          clock pessimism              0.000     8.924    
                          clock uncertainty           -0.035     8.889    
-    SLICE_X28Y50         FDCE (Setup_fdce_C_D)        0.079     8.968    GEN[5].INTERNAL.FFI/q_reg
+    SLICE_X6Y13          FDCE (Setup_fdce_C_D)        0.081     8.970    GEN[5].INTERNAL.FFI/q_reg
+  -------------------------------------------------------------------
+                         required time                          8.970    
+                         arrival time                          -2.426    
+  -------------------------------------------------------------------
+                         slack                                  6.544    
+
+Slack (MET) :             6.548ns  (required time - arrival time)
+  Source:                 init_reg/GEN[6].i_DFF/q_reg/C
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            GEN[6].INTERNAL.FFI/q_reg/D
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             LFSR_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
+  Data Path Delay:        1.447ns  (logic 0.774ns (53.481%)  route 0.673ns (46.520%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock LFSR_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=31, unset)           0.973     0.973    init_reg/GEN[6].i_DFF/clk
+    SLICE_X6Y13          FDCE                                         r  init_reg/GEN[6].i_DFF/q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y13          FDCE (Prop_fdce_C_Q)         0.478     1.451 r  init_reg/GEN[6].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.673     2.124    init_reg/GEN[6].i_DFF/q_reg_n_0
+    SLICE_X6Y13          LUT3 (Prop_lut3_I0_O)        0.296     2.420 r  init_reg/GEN[6].i_DFF/q_i_1__9/O
+                         net (fo=1, routed)           0.000     2.420    GEN[6].INTERNAL.FFI/q_reg_0
+    SLICE_X6Y13          FDCE                                         r  GEN[6].INTERNAL.FFI/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock LFSR_clk rise edge)
+                                                      8.000     8.000 r  
+                                                      0.000     8.000 r  clk (IN)
+                         net (fo=31, unset)           0.924     8.924    GEN[6].INTERNAL.FFI/clk
+    SLICE_X6Y13          FDCE                                         r  GEN[6].INTERNAL.FFI/q_reg/C
+                         clock pessimism              0.000     8.924    
+                         clock uncertainty           -0.035     8.889    
+    SLICE_X6Y13          FDCE (Setup_fdce_C_D)        0.079     8.968    GEN[6].INTERNAL.FFI/q_reg
   -------------------------------------------------------------------
                          required time                          8.968    
-                         arrival time                          -2.284    
+                         arrival time                          -2.420    
   -------------------------------------------------------------------
-                         slack                                  6.684    
+                         slack                                  6.548    
 
-Slack (MET) :             6.685ns  (required time - arrival time)
-  Source:                 GEN[13].INTERNAL.FFI/q_reg/C
+Slack (MET) :             6.548ns  (required time - arrival time)
+  Source:                 init_reg/GEN[8].i_DFF/q_reg/C
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            GEN[8].INTERNAL.FFI/q_reg/D
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             LFSR_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
+  Data Path Delay:        1.447ns  (logic 0.774ns (53.481%)  route 0.673ns (46.520%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock LFSR_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=31, unset)           0.973     0.973    init_reg/GEN[8].i_DFF/clk
+    SLICE_X8Y13          FDCE                                         r  init_reg/GEN[8].i_DFF/q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y13          FDCE (Prop_fdce_C_Q)         0.478     1.451 r  init_reg/GEN[8].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.673     2.124    init_reg/GEN[8].i_DFF/q_reg_n_0
+    SLICE_X8Y13          LUT3 (Prop_lut3_I0_O)        0.296     2.420 r  init_reg/GEN[8].i_DFF/q_i_1__7/O
+                         net (fo=1, routed)           0.000     2.420    GEN[8].INTERNAL.FFI/q_reg_0
+    SLICE_X8Y13          FDCE                                         r  GEN[8].INTERNAL.FFI/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock LFSR_clk rise edge)
+                                                      8.000     8.000 r  
+                                                      0.000     8.000 r  clk (IN)
+                         net (fo=31, unset)           0.924     8.924    GEN[8].INTERNAL.FFI/clk
+    SLICE_X8Y13          FDCE                                         r  GEN[8].INTERNAL.FFI/q_reg/C
+                         clock pessimism              0.000     8.924    
+                         clock uncertainty           -0.035     8.889    
+    SLICE_X8Y13          FDCE (Setup_fdce_C_D)        0.079     8.968    GEN[8].INTERNAL.FFI/q_reg
+  -------------------------------------------------------------------
+                         required time                          8.968    
+                         arrival time                          -2.420    
+  -------------------------------------------------------------------
+                         slack                                  6.548    
+
+Slack (MET) :             6.561ns  (required time - arrival time)
+  Source:                 init_reg/GEN[13].i_DFF/q_reg/C
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            GEN[13].INTERNAL.FFI/q_reg/D
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             LFSR_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
+  Data Path Delay:        1.386ns  (logic 0.715ns (51.605%)  route 0.671ns (48.395%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock LFSR_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=31, unset)           0.973     0.973    init_reg/GEN[13].i_DFF/clk
+    SLICE_X9Y13          FDCE                                         r  init_reg/GEN[13].i_DFF/q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y13          FDCE (Prop_fdce_C_Q)         0.419     1.392 r  init_reg/GEN[13].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.671     2.063    init_reg/GEN[13].i_DFF/q_reg_n_0
+    SLICE_X9Y13          LUT3 (Prop_lut3_I0_O)        0.296     2.359 r  init_reg/GEN[13].i_DFF/q_i_1__2/O
+                         net (fo=1, routed)           0.000     2.359    GEN[13].INTERNAL.FFI/q_reg_0
+    SLICE_X9Y13          FDCE                                         r  GEN[13].INTERNAL.FFI/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock LFSR_clk rise edge)
+                                                      8.000     8.000 r  
+                                                      0.000     8.000 r  clk (IN)
+                         net (fo=31, unset)           0.924     8.924    GEN[13].INTERNAL.FFI/clk
+    SLICE_X9Y13          FDCE                                         r  GEN[13].INTERNAL.FFI/q_reg/C
+                         clock pessimism              0.000     8.924    
+                         clock uncertainty           -0.035     8.889    
+    SLICE_X9Y13          FDCE (Setup_fdce_C_D)        0.031     8.920    GEN[13].INTERNAL.FFI/q_reg
+  -------------------------------------------------------------------
+                         required time                          8.920    
+                         arrival time                          -2.359    
+  -------------------------------------------------------------------
+                         slack                                  6.561    
+
+Slack (MET) :             6.562ns  (required time - arrival time)
+  Source:                 init_reg/GEN[14].i_DFF/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            GEN[14].INTERNAL.FFI/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        1.262ns  (logic 0.580ns (45.956%)  route 0.682ns (54.044%))
+  Data Path Delay:        1.385ns  (logic 0.716ns (51.689%)  route 0.669ns (48.311%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
@@ -656,29 +607,78 @@ Slack (MET) :             6.685ns  (required time - arrival time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.973     0.973    GEN[13].INTERNAL.FFI/clk
-    SLICE_X26Y50         FDCE                                         r  GEN[13].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.973     0.973    init_reg/GEN[14].i_DFF/clk
+    SLICE_X9Y13          FDCE                                         r  init_reg/GEN[14].i_DFF/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X26Y50         FDCE (Prop_fdce_C_Q)         0.456     1.429 r  GEN[13].INTERNAL.FFI/q_reg/Q
-                         net (fo=2, routed)           0.682     2.111    GEN[13].INTERNAL.FFI/q_s_1
-    SLICE_X27Y50         LUT3 (Prop_lut3_I1_O)        0.124     2.235 r  GEN[13].INTERNAL.FFI/state[14]_INST_0/O
-                         net (fo=1, routed)           0.000     2.235    GEN[14].INTERNAL.FFI/state[0]
-    SLICE_X27Y50         FDCE                                         r  GEN[14].INTERNAL.FFI/q_reg/D
+    SLICE_X9Y13          FDCE (Prop_fdce_C_Q)         0.419     1.392 r  init_reg/GEN[14].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.669     2.061    init_reg/GEN[14].i_DFF/q_reg_n_0
+    SLICE_X9Y13          LUT3 (Prop_lut3_I0_O)        0.297     2.358 r  init_reg/GEN[14].i_DFF/q_i_1__1/O
+                         net (fo=1, routed)           0.000     2.358    GEN[14].INTERNAL.FFI/q_reg_0
+    SLICE_X9Y13          FDCE                                         r  GEN[14].INTERNAL.FFI/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       8.000     8.000 r  
                                                       0.000     8.000 r  clk (IN)
-                         net (fo=15, unset)           0.924     8.924    GEN[14].INTERNAL.FFI/clk
-    SLICE_X27Y50         FDCE                                         r  GEN[14].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.924     8.924    GEN[14].INTERNAL.FFI/clk
+    SLICE_X9Y13          FDCE                                         r  GEN[14].INTERNAL.FFI/q_reg/C
                          clock pessimism              0.000     8.924    
                          clock uncertainty           -0.035     8.889    
-    SLICE_X27Y50         FDCE (Setup_fdce_C_D)        0.031     8.920    GEN[14].INTERNAL.FFI/q_reg
+    SLICE_X9Y13          FDCE (Setup_fdce_C_D)        0.031     8.920    GEN[14].INTERNAL.FFI/q_reg
   -------------------------------------------------------------------
                          required time                          8.920    
-                         arrival time                          -2.235    
+                         arrival time                          -2.358    
   -------------------------------------------------------------------
-                         slack                                  6.685    
+                         slack                                  6.562    
+
+Slack (MET) :             6.562ns  (required time - arrival time)
+  Source:                 init_reg/GEN[2].i_DFF/q_reg/C
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            GEN[2].INTERNAL.FFI/q_reg/D
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             LFSR_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (LFSR_clk rise@8.000ns - LFSR_clk rise@0.000ns)
+  Data Path Delay:        1.385ns  (logic 0.716ns (51.689%)  route 0.669ns (48.311%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock LFSR_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=31, unset)           0.973     0.973    init_reg/GEN[2].i_DFF/clk
+    SLICE_X7Y13          FDCE                                         r  init_reg/GEN[2].i_DFF/q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y13          FDCE (Prop_fdce_C_Q)         0.419     1.392 r  init_reg/GEN[2].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.669     2.061    init_reg/GEN[2].i_DFF/q_reg_n_0
+    SLICE_X7Y13          LUT3 (Prop_lut3_I0_O)        0.297     2.358 r  init_reg/GEN[2].i_DFF/q_i_1__13/O
+                         net (fo=1, routed)           0.000     2.358    GEN[2].INTERNAL.FFI/q_reg_0
+    SLICE_X7Y13          FDCE                                         r  GEN[2].INTERNAL.FFI/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock LFSR_clk rise edge)
+                                                      8.000     8.000 r  
+                                                      0.000     8.000 r  clk (IN)
+                         net (fo=31, unset)           0.924     8.924    GEN[2].INTERNAL.FFI/clk
+    SLICE_X7Y13          FDCE                                         r  GEN[2].INTERNAL.FFI/q_reg/C
+                         clock pessimism              0.000     8.924    
+                         clock uncertainty           -0.035     8.889    
+    SLICE_X7Y13          FDCE (Setup_fdce_C_D)        0.031     8.920    GEN[2].INTERNAL.FFI/q_reg
+  -------------------------------------------------------------------
+                         required time                          8.920    
+                         arrival time                          -2.358    
+  -------------------------------------------------------------------
+                         slack                                  6.562    
 
 
 
@@ -686,144 +686,15 @@ Slack (MET) :             6.685ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.159ns  (arrival time - required time)
-  Source:                 GEN[0].FIRST.FF0/q_reg/C
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[1].INTERNAL.FFI/q_reg/D
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             LFSR_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        0.272ns  (logic 0.186ns (68.463%)  route 0.086ns (31.537%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.432ns
-    Source Clock Delay      (SCD):    0.410ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock LFSR_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.410     0.410    GEN[0].FIRST.FF0/clk
-    SLICE_X26Y50         FDCE                                         r  GEN[0].FIRST.FF0/q_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X26Y50         FDCE (Prop_fdce_C_Q)         0.141     0.551 r  GEN[0].FIRST.FF0/q_reg/Q
-                         net (fo=1, routed)           0.086     0.637    GEN[0].FIRST.FF0/q
-    SLICE_X27Y50         LUT3 (Prop_lut3_I1_O)        0.045     0.682 r  GEN[0].FIRST.FF0/state[1]_INST_0/O
-                         net (fo=1, routed)           0.000     0.682    GEN[1].INTERNAL.FFI/state[0]
-    SLICE_X27Y50         FDCE                                         r  GEN[1].INTERNAL.FFI/q_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock LFSR_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.432     0.432    GEN[1].INTERNAL.FFI/clk
-    SLICE_X27Y50         FDCE                                         r  GEN[1].INTERNAL.FFI/q_reg/C
-                         clock pessimism              0.000     0.432    
-    SLICE_X27Y50         FDCE (Hold_fdce_C_D)         0.091     0.523    GEN[1].INTERNAL.FFI/q_reg
-  -------------------------------------------------------------------
-                         required time                         -0.523    
-                         arrival time                           0.682    
-  -------------------------------------------------------------------
-                         slack                                  0.159    
-
-Slack (MET) :             0.230ns  (arrival time - required time)
-  Source:                 GEN[2].INTERNAL.FFI/q_reg/C
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[3].INTERNAL.FFI/q_reg/D
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             LFSR_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        0.372ns  (logic 0.209ns (56.167%)  route 0.163ns (43.833%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.432ns
-    Source Clock Delay      (SCD):    0.410ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock LFSR_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.410     0.410    GEN[2].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[2].INTERNAL.FFI/q_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X28Y50         FDCE (Prop_fdce_C_Q)         0.164     0.574 r  GEN[2].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.163     0.737    GEN[2].INTERNAL.FFI/q_reg_n_0
-    SLICE_X28Y50         LUT3 (Prop_lut3_I1_O)        0.045     0.782 r  GEN[2].INTERNAL.FFI/state[3]_INST_0/O
-                         net (fo=1, routed)           0.000     0.782    GEN[3].INTERNAL.FFI/state[0]
-    SLICE_X28Y50         FDCE                                         r  GEN[3].INTERNAL.FFI/q_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock LFSR_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.432     0.432    GEN[3].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[3].INTERNAL.FFI/q_reg/C
-                         clock pessimism              0.000     0.432    
-    SLICE_X28Y50         FDCE (Hold_fdce_C_D)         0.121     0.553    GEN[3].INTERNAL.FFI/q_reg
-  -------------------------------------------------------------------
-                         required time                         -0.553    
-                         arrival time                           0.782    
-  -------------------------------------------------------------------
-                         slack                                  0.230    
-
-Slack (MET) :             0.231ns  (arrival time - required time)
-  Source:                 GEN[7].INTERNAL.FFI/q_reg/C
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[8].INTERNAL.FFI/q_reg/D
-                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             LFSR_clk
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        0.344ns  (logic 0.186ns (54.053%)  route 0.158ns (45.947%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    0.432ns
-    Source Clock Delay      (SCD):    0.410ns
-    Clock Pessimism Removal (CPR):    -0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock LFSR_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.410     0.410    GEN[7].INTERNAL.FFI/clk
-    SLICE_X27Y51         FDCE                                         r  GEN[7].INTERNAL.FFI/q_reg/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X27Y51         FDCE (Prop_fdce_C_Q)         0.141     0.551 r  GEN[7].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.158     0.709    GEN[7].INTERNAL.FFI/q_reg_n_0
-    SLICE_X27Y51         LUT3 (Prop_lut3_I1_O)        0.045     0.754 r  GEN[7].INTERNAL.FFI/state[8]_INST_0/O
-                         net (fo=1, routed)           0.000     0.754    GEN[8].INTERNAL.FFI/state[0]
-    SLICE_X27Y51         FDCE                                         r  GEN[8].INTERNAL.FFI/q_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock LFSR_clk rise edge)
-                                                      0.000     0.000 r  
-                                                      0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.432     0.432    GEN[8].INTERNAL.FFI/clk
-    SLICE_X27Y51         FDCE                                         r  GEN[8].INTERNAL.FFI/q_reg/C
-                         clock pessimism              0.000     0.432    
-    SLICE_X27Y51         FDCE (Hold_fdce_C_D)         0.092     0.524    GEN[8].INTERNAL.FFI/q_reg
-  -------------------------------------------------------------------
-                         required time                         -0.524    
-                         arrival time                           0.754    
-  -------------------------------------------------------------------
-                         slack                                  0.231    
-
-Slack (MET) :             0.237ns  (arrival time - required time)
-  Source:                 GEN[10].INTERNAL.FFI/q_reg/C
+Slack (MET) :             0.143ns  (arrival time - required time)
+  Source:                 GEN[12].INTERNAL.FFI/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            GEN[0].FIRST.FF0/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        0.350ns  (logic 0.186ns (53.211%)  route 0.164ns (46.789%))
+  Data Path Delay:        0.284ns  (logic 0.186ns (65.445%)  route 0.098ns (34.555%))
   Logic Levels:           1  (LUT6=1)
   Clock Path Skew:        0.022ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    0.432ns
@@ -835,38 +706,38 @@ Slack (MET) :             0.237ns  (arrival time - required time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.410     0.410    GEN[10].INTERNAL.FFI/clk
-    SLICE_X26Y51         FDCE                                         r  GEN[10].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.410     0.410    GEN[12].INTERNAL.FFI/clk
+    SLICE_X9Y13          FDCE                                         r  GEN[12].INTERNAL.FFI/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X26Y51         FDCE (Prop_fdce_C_Q)         0.141     0.551 r  GEN[10].INTERNAL.FFI/q_reg/Q
-                         net (fo=2, routed)           0.164     0.715    GEN[12].INTERNAL.FFI/q_s_4
-    SLICE_X26Y50         LUT6 (Prop_lut6_I4_O)        0.045     0.760 r  GEN[12].INTERNAL.FFI/state[0]_INST_0/O
-                         net (fo=1, routed)           0.000     0.760    GEN[0].FIRST.FF0/state[0]
-    SLICE_X26Y50         FDCE                                         r  GEN[0].FIRST.FF0/q_reg/D
+    SLICE_X9Y13          FDCE (Prop_fdce_C_Q)         0.141     0.551 r  GEN[12].INTERNAL.FFI/q_reg/Q
+                         net (fo=2, routed)           0.098     0.649    init_reg/GEN[0].i_DFF/state[2]
+    SLICE_X8Y13          LUT6 (Prop_lut6_I2_O)        0.045     0.694 r  init_reg/GEN[0].i_DFF/q_i_1/O
+                         net (fo=1, routed)           0.000     0.694    GEN[0].FIRST.FF0/d
+    SLICE_X8Y13          FDCE                                         r  GEN[0].FIRST.FF0/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.432     0.432    GEN[0].FIRST.FF0/clk
-    SLICE_X26Y50         FDCE                                         r  GEN[0].FIRST.FF0/q_reg/C
+                         net (fo=31, unset)           0.432     0.432    GEN[0].FIRST.FF0/clk
+    SLICE_X8Y13          FDCE                                         r  GEN[0].FIRST.FF0/q_reg/C
                          clock pessimism              0.000     0.432    
-    SLICE_X26Y50         FDCE (Hold_fdce_C_D)         0.091     0.523    GEN[0].FIRST.FF0/q_reg
+    SLICE_X8Y13          FDCE (Hold_fdce_C_D)         0.120     0.552    GEN[0].FIRST.FF0/q_reg
   -------------------------------------------------------------------
-                         required time                         -0.523    
-                         arrival time                           0.760    
+                         required time                         -0.552    
+                         arrival time                           0.694    
   -------------------------------------------------------------------
-                         slack                                  0.237    
+                         slack                                  0.143    
 
-Slack (MET) :             0.257ns  (arrival time - required time)
-  Source:                 GEN[4].INTERNAL.FFI/q_reg/C
+Slack (MET) :             0.159ns  (arrival time - required time)
+  Source:                 init_reg/GEN[7].i_DFF/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[5].INTERNAL.FFI/q_reg/D
+  Destination:            GEN[7].INTERNAL.FFI/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        0.399ns  (logic 0.209ns (52.367%)  route 0.190ns (47.633%))
+  Data Path Delay:        0.301ns  (logic 0.246ns (81.603%)  route 0.055ns (18.397%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        0.022ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    0.432ns
@@ -878,38 +749,81 @@ Slack (MET) :             0.257ns  (arrival time - required time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.410     0.410    GEN[4].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[4].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.410     0.410    init_reg/GEN[7].i_DFF/clk
+    SLICE_X6Y13          FDCE                                         r  init_reg/GEN[7].i_DFF/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y50         FDCE (Prop_fdce_C_Q)         0.164     0.574 r  GEN[4].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.190     0.764    GEN[4].INTERNAL.FFI/q_reg_n_0
-    SLICE_X28Y50         LUT3 (Prop_lut3_I1_O)        0.045     0.809 r  GEN[4].INTERNAL.FFI/state[5]_INST_0/O
-                         net (fo=1, routed)           0.000     0.809    GEN[5].INTERNAL.FFI/state[0]
-    SLICE_X28Y50         FDCE                                         r  GEN[5].INTERNAL.FFI/q_reg/D
+    SLICE_X6Y13          FDCE (Prop_fdce_C_Q)         0.148     0.558 r  init_reg/GEN[7].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.055     0.614    init_reg/GEN[7].i_DFF/q_reg_n_0
+    SLICE_X6Y13          LUT3 (Prop_lut3_I0_O)        0.098     0.712 r  init_reg/GEN[7].i_DFF/q_i_1__8/O
+                         net (fo=1, routed)           0.000     0.712    GEN[7].INTERNAL.FFI/q_reg_0
+    SLICE_X6Y13          FDCE                                         r  GEN[7].INTERNAL.FFI/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.432     0.432    GEN[5].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[5].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.432     0.432    GEN[7].INTERNAL.FFI/clk
+    SLICE_X6Y13          FDCE                                         r  GEN[7].INTERNAL.FFI/q_reg/C
                          clock pessimism              0.000     0.432    
-    SLICE_X28Y50         FDCE (Hold_fdce_C_D)         0.121     0.553    GEN[5].INTERNAL.FFI/q_reg
+    SLICE_X6Y13          FDCE (Hold_fdce_C_D)         0.121     0.553    GEN[7].INTERNAL.FFI/q_reg
   -------------------------------------------------------------------
                          required time                         -0.553    
-                         arrival time                           0.809    
+                         arrival time                           0.712    
   -------------------------------------------------------------------
-                         slack                                  0.257    
+                         slack                                  0.159    
 
-Slack (MET) :             0.289ns  (arrival time - required time)
-  Source:                 GEN[3].INTERNAL.FFI/q_reg/C
+Slack (MET) :             0.159ns  (arrival time - required time)
+  Source:                 init_reg/GEN[9].i_DFF/q_reg/C
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            GEN[9].INTERNAL.FFI/q_reg/D
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             LFSR_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
+  Data Path Delay:        0.301ns  (logic 0.246ns (81.603%)  route 0.055ns (18.397%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock LFSR_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=31, unset)           0.410     0.410    init_reg/GEN[9].i_DFF/clk
+    SLICE_X8Y13          FDCE                                         r  init_reg/GEN[9].i_DFF/q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y13          FDCE (Prop_fdce_C_Q)         0.148     0.558 r  init_reg/GEN[9].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.055     0.614    init_reg/GEN[9].i_DFF/q_reg_n_0
+    SLICE_X8Y13          LUT3 (Prop_lut3_I0_O)        0.098     0.712 r  init_reg/GEN[9].i_DFF/q_i_1__6/O
+                         net (fo=1, routed)           0.000     0.712    GEN[9].INTERNAL.FFI/q_reg_0
+    SLICE_X8Y13          FDCE                                         r  GEN[9].INTERNAL.FFI/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock LFSR_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=31, unset)           0.432     0.432    GEN[9].INTERNAL.FFI/clk
+    SLICE_X8Y13          FDCE                                         r  GEN[9].INTERNAL.FFI/q_reg/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X8Y13          FDCE (Hold_fdce_C_D)         0.121     0.553    GEN[9].INTERNAL.FFI/q_reg
+  -------------------------------------------------------------------
+                         required time                         -0.553    
+                         arrival time                           0.712    
+  -------------------------------------------------------------------
+                         slack                                  0.159    
+
+Slack (MET) :             0.164ns  (arrival time - required time)
+  Source:                 init_reg/GEN[4].i_DFF/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            GEN[4].INTERNAL.FFI/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        0.431ns  (logic 0.209ns (48.449%)  route 0.222ns (51.551%))
+  Data Path Delay:        0.305ns  (logic 0.246ns (80.588%)  route 0.059ns (19.412%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        0.022ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    0.432ns
@@ -921,38 +835,38 @@ Slack (MET) :             0.289ns  (arrival time - required time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.410     0.410    GEN[3].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[3].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.410     0.410    init_reg/GEN[4].i_DFF/clk
+    SLICE_X6Y13          FDCE                                         r  init_reg/GEN[4].i_DFF/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y50         FDCE (Prop_fdce_C_Q)         0.164     0.574 r  GEN[3].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.222     0.797    GEN[3].INTERNAL.FFI/q_reg_n_0
-    SLICE_X28Y50         LUT3 (Prop_lut3_I1_O)        0.045     0.842 r  GEN[3].INTERNAL.FFI/state[4]_INST_0/O
-                         net (fo=1, routed)           0.000     0.842    GEN[4].INTERNAL.FFI/state[0]
-    SLICE_X28Y50         FDCE                                         r  GEN[4].INTERNAL.FFI/q_reg/D
+    SLICE_X6Y13          FDCE (Prop_fdce_C_Q)         0.148     0.558 r  init_reg/GEN[4].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.059     0.617    init_reg/GEN[4].i_DFF/q_reg_n_0
+    SLICE_X6Y13          LUT3 (Prop_lut3_I0_O)        0.098     0.715 r  init_reg/GEN[4].i_DFF/q_i_1__11/O
+                         net (fo=1, routed)           0.000     0.715    GEN[4].INTERNAL.FFI/q_reg_0
+    SLICE_X6Y13          FDCE                                         r  GEN[4].INTERNAL.FFI/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.432     0.432    GEN[4].INTERNAL.FFI/clk
-    SLICE_X28Y50         FDCE                                         r  GEN[4].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.432     0.432    GEN[4].INTERNAL.FFI/clk
+    SLICE_X6Y13          FDCE                                         r  GEN[4].INTERNAL.FFI/q_reg/C
                          clock pessimism              0.000     0.432    
-    SLICE_X28Y50         FDCE (Hold_fdce_C_D)         0.121     0.553    GEN[4].INTERNAL.FFI/q_reg
+    SLICE_X6Y13          FDCE (Hold_fdce_C_D)         0.120     0.552    GEN[4].INTERNAL.FFI/q_reg
   -------------------------------------------------------------------
-                         required time                         -0.553    
-                         arrival time                           0.842    
+                         required time                         -0.552    
+                         arrival time                           0.715    
   -------------------------------------------------------------------
-                         slack                                  0.289    
+                         slack                                  0.164    
 
-Slack (MET) :             0.292ns  (arrival time - required time)
-  Source:                 GEN[14].INTERNAL.FFI/q_reg/C
+Slack (MET) :             0.168ns  (arrival time - required time)
+  Source:                 init_reg/GEN[15].i_DFF/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            GEN[15].LAST.FFN/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        0.405ns  (logic 0.186ns (45.883%)  route 0.219ns (54.117%))
+  Data Path Delay:        0.281ns  (logic 0.226ns (80.368%)  route 0.055ns (19.632%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        0.022ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    0.432ns
@@ -964,38 +878,38 @@ Slack (MET) :             0.292ns  (arrival time - required time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.410     0.410    GEN[14].INTERNAL.FFI/clk
-    SLICE_X27Y50         FDCE                                         r  GEN[14].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.410     0.410    init_reg/GEN[15].i_DFF/clk
+    SLICE_X9Y13          FDCE                                         r  init_reg/GEN[15].i_DFF/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X27Y50         FDCE (Prop_fdce_C_Q)         0.141     0.551 r  GEN[14].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.219     0.771    GEN[14].INTERNAL.FFI/q_reg_n_0
-    SLICE_X27Y50         LUT3 (Prop_lut3_I1_O)        0.045     0.816 r  GEN[14].INTERNAL.FFI/state[15]_INST_0/O
-                         net (fo=1, routed)           0.000     0.816    GEN[15].LAST.FFN/state[0]
-    SLICE_X27Y50         FDCE                                         r  GEN[15].LAST.FFN/q_reg/D
+    SLICE_X9Y13          FDCE (Prop_fdce_C_Q)         0.128     0.538 r  init_reg/GEN[15].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.055     0.593    init_reg/GEN[15].i_DFF/q_reg_n_0
+    SLICE_X9Y13          LUT3 (Prop_lut3_I0_O)        0.098     0.691 r  init_reg/GEN[15].i_DFF/q_i_1__0/O
+                         net (fo=1, routed)           0.000     0.691    GEN[15].LAST.FFN/q_reg_0
+    SLICE_X9Y13          FDCE                                         r  GEN[15].LAST.FFN/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.432     0.432    GEN[15].LAST.FFN/clk
-    SLICE_X27Y50         FDCE                                         r  GEN[15].LAST.FFN/q_reg/C
+                         net (fo=31, unset)           0.432     0.432    GEN[15].LAST.FFN/clk
+    SLICE_X9Y13          FDCE                                         r  GEN[15].LAST.FFN/q_reg/C
                          clock pessimism              0.000     0.432    
-    SLICE_X27Y50         FDCE (Hold_fdce_C_D)         0.092     0.524    GEN[15].LAST.FFN/q_reg
+    SLICE_X9Y13          FDCE (Hold_fdce_C_D)         0.092     0.524    GEN[15].LAST.FFN/q_reg
   -------------------------------------------------------------------
                          required time                         -0.524    
-                         arrival time                           0.816    
+                         arrival time                           0.691    
   -------------------------------------------------------------------
-                         slack                                  0.292    
+                         slack                                  0.168    
 
-Slack (MET) :             0.294ns  (arrival time - required time)
-  Source:                 GEN[9].INTERNAL.FFI/q_reg/C
+Slack (MET) :             0.168ns  (arrival time - required time)
+  Source:                 init_reg/GEN[3].i_DFF/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[10].INTERNAL.FFI/q_reg/D
+  Destination:            GEN[3].INTERNAL.FFI/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        0.407ns  (logic 0.186ns (45.708%)  route 0.221ns (54.292%))
+  Data Path Delay:        0.281ns  (logic 0.226ns (80.368%)  route 0.055ns (19.632%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        0.022ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    0.432ns
@@ -1007,30 +921,30 @@ Slack (MET) :             0.294ns  (arrival time - required time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.410     0.410    GEN[9].INTERNAL.FFI/clk
-    SLICE_X26Y51         FDCE                                         r  GEN[9].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.410     0.410    init_reg/GEN[3].i_DFF/clk
+    SLICE_X7Y13          FDCE                                         r  init_reg/GEN[3].i_DFF/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X26Y51         FDCE (Prop_fdce_C_Q)         0.141     0.551 r  GEN[9].INTERNAL.FFI/q_reg/Q
-                         net (fo=1, routed)           0.221     0.772    GEN[9].INTERNAL.FFI/q_reg_n_0
-    SLICE_X26Y51         LUT3 (Prop_lut3_I1_O)        0.045     0.817 r  GEN[9].INTERNAL.FFI/state[10]_INST_0/O
-                         net (fo=1, routed)           0.000     0.817    GEN[10].INTERNAL.FFI/state[0]
-    SLICE_X26Y51         FDCE                                         r  GEN[10].INTERNAL.FFI/q_reg/D
+    SLICE_X7Y13          FDCE (Prop_fdce_C_Q)         0.128     0.538 r  init_reg/GEN[3].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.055     0.593    init_reg/GEN[3].i_DFF/q_reg_n_0
+    SLICE_X7Y13          LUT3 (Prop_lut3_I0_O)        0.098     0.691 r  init_reg/GEN[3].i_DFF/q_i_1__12/O
+                         net (fo=1, routed)           0.000     0.691    GEN[3].INTERNAL.FFI/q_reg_0
+    SLICE_X7Y13          FDCE                                         r  GEN[3].INTERNAL.FFI/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.432     0.432    GEN[10].INTERNAL.FFI/clk
-    SLICE_X26Y51         FDCE                                         r  GEN[10].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.432     0.432    GEN[3].INTERNAL.FFI/clk
+    SLICE_X7Y13          FDCE                                         r  GEN[3].INTERNAL.FFI/q_reg/C
                          clock pessimism              0.000     0.432    
-    SLICE_X26Y51         FDCE (Hold_fdce_C_D)         0.091     0.523    GEN[10].INTERNAL.FFI/q_reg
+    SLICE_X7Y13          FDCE (Hold_fdce_C_D)         0.092     0.524    GEN[3].INTERNAL.FFI/q_reg
   -------------------------------------------------------------------
-                         required time                         -0.523    
-                         arrival time                           0.817    
+                         required time                         -0.524    
+                         arrival time                           0.691    
   -------------------------------------------------------------------
-                         slack                                  0.294    
+                         slack                                  0.168    
 
-Slack (MET) :             0.297ns  (arrival time - required time)
+Slack (MET) :             0.168ns  (arrival time - required time)
   Source:                 GEN[10].INTERNAL.FFI/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            GEN[11].INTERNAL.FFI/q_reg/D
@@ -1038,7 +952,7 @@ Slack (MET) :             0.297ns  (arrival time - required time)
   Path Group:             LFSR_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        0.411ns  (logic 0.186ns (45.279%)  route 0.225ns (54.721%))
+  Data Path Delay:        0.311ns  (logic 0.186ns (59.838%)  route 0.125ns (40.162%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        0.022ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    0.432ns
@@ -1050,38 +964,38 @@ Slack (MET) :             0.297ns  (arrival time - required time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.410     0.410    GEN[10].INTERNAL.FFI/clk
-    SLICE_X26Y51         FDCE                                         r  GEN[10].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.410     0.410    GEN[10].INTERNAL.FFI/clk
+    SLICE_X7Y13          FDCE                                         r  GEN[10].INTERNAL.FFI/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X26Y51         FDCE (Prop_fdce_C_Q)         0.141     0.551 r  GEN[10].INTERNAL.FFI/q_reg/Q
-                         net (fo=2, routed)           0.225     0.776    GEN[10].INTERNAL.FFI/q_s_4
-    SLICE_X26Y50         LUT3 (Prop_lut3_I1_O)        0.045     0.821 r  GEN[10].INTERNAL.FFI/state[11]_INST_0/O
-                         net (fo=1, routed)           0.000     0.821    GEN[11].INTERNAL.FFI/state[0]
-    SLICE_X26Y50         FDCE                                         r  GEN[11].INTERNAL.FFI/q_reg/D
+    SLICE_X7Y13          FDCE (Prop_fdce_C_Q)         0.141     0.551 r  GEN[10].INTERNAL.FFI/q_reg/Q
+                         net (fo=2, routed)           0.125     0.676    init_reg/GEN[11].i_DFF/state[0]
+    SLICE_X8Y13          LUT3 (Prop_lut3_I2_O)        0.045     0.721 r  init_reg/GEN[11].i_DFF/q_i_1__4/O
+                         net (fo=1, routed)           0.000     0.721    GEN[11].INTERNAL.FFI/q_reg_0
+    SLICE_X8Y13          FDCE                                         r  GEN[11].INTERNAL.FFI/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.432     0.432    GEN[11].INTERNAL.FFI/clk
-    SLICE_X26Y50         FDCE                                         r  GEN[11].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.432     0.432    GEN[11].INTERNAL.FFI/clk
+    SLICE_X8Y13          FDCE                                         r  GEN[11].INTERNAL.FFI/q_reg/C
                          clock pessimism              0.000     0.432    
-    SLICE_X26Y50         FDCE (Hold_fdce_C_D)         0.092     0.524    GEN[11].INTERNAL.FFI/q_reg
+    SLICE_X8Y13          FDCE (Hold_fdce_C_D)         0.121     0.553    GEN[11].INTERNAL.FFI/q_reg
   -------------------------------------------------------------------
-                         required time                         -0.524    
-                         arrival time                           0.821    
+                         required time                         -0.553    
+                         arrival time                           0.721    
   -------------------------------------------------------------------
-                         slack                                  0.297    
+                         slack                                  0.168    
 
-Slack (MET) :             0.306ns  (arrival time - required time)
-  Source:                 GEN[12].INTERNAL.FFI/q_reg/C
+Slack (MET) :             0.169ns  (arrival time - required time)
+  Source:                 init_reg/GEN[10].i_DFF/q_reg/C
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            GEN[13].INTERNAL.FFI/q_reg/D
+  Destination:            GEN[10].INTERNAL.FFI/q_reg/D
                             (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             LFSR_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
-  Data Path Delay:        0.420ns  (logic 0.186ns (44.301%)  route 0.234ns (55.699%))
+  Data Path Delay:        0.281ns  (logic 0.227ns (80.665%)  route 0.054ns (19.335%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        0.022ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    0.432ns
@@ -1093,28 +1007,114 @@ Slack (MET) :             0.306ns  (arrival time - required time)
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.410     0.410    GEN[12].INTERNAL.FFI/clk
-    SLICE_X26Y50         FDCE                                         r  GEN[12].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.410     0.410    init_reg/GEN[10].i_DFF/clk
+    SLICE_X7Y13          FDCE                                         r  init_reg/GEN[10].i_DFF/q_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X26Y50         FDCE (Prop_fdce_C_Q)         0.141     0.551 r  GEN[12].INTERNAL.FFI/q_reg/Q
-                         net (fo=2, routed)           0.234     0.785    GEN[12].INTERNAL.FFI/q_s_2
-    SLICE_X26Y50         LUT3 (Prop_lut3_I1_O)        0.045     0.830 r  GEN[12].INTERNAL.FFI/state[13]_INST_0/O
-                         net (fo=1, routed)           0.000     0.830    GEN[13].INTERNAL.FFI/state[0]
-    SLICE_X26Y50         FDCE                                         r  GEN[13].INTERNAL.FFI/q_reg/D
+    SLICE_X7Y13          FDCE (Prop_fdce_C_Q)         0.128     0.538 r  init_reg/GEN[10].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.054     0.593    init_reg/GEN[10].i_DFF/q_reg_n_0
+    SLICE_X7Y13          LUT3 (Prop_lut3_I0_O)        0.099     0.692 r  init_reg/GEN[10].i_DFF/q_i_1__5/O
+                         net (fo=1, routed)           0.000     0.692    GEN[10].INTERNAL.FFI/q_reg_0
+    SLICE_X7Y13          FDCE                                         r  GEN[10].INTERNAL.FFI/q_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock LFSR_clk rise edge)
                                                       0.000     0.000 r  
                                                       0.000     0.000 r  clk (IN)
-                         net (fo=15, unset)           0.432     0.432    GEN[13].INTERNAL.FFI/clk
-    SLICE_X26Y50         FDCE                                         r  GEN[13].INTERNAL.FFI/q_reg/C
+                         net (fo=31, unset)           0.432     0.432    GEN[10].INTERNAL.FFI/clk
+    SLICE_X7Y13          FDCE                                         r  GEN[10].INTERNAL.FFI/q_reg/C
                          clock pessimism              0.000     0.432    
-    SLICE_X26Y50         FDCE (Hold_fdce_C_D)         0.092     0.524    GEN[13].INTERNAL.FFI/q_reg
+    SLICE_X7Y13          FDCE (Hold_fdce_C_D)         0.091     0.523    GEN[10].INTERNAL.FFI/q_reg
   -------------------------------------------------------------------
-                         required time                         -0.524    
-                         arrival time                           0.830    
+                         required time                         -0.523    
+                         arrival time                           0.692    
   -------------------------------------------------------------------
-                         slack                                  0.306    
+                         slack                                  0.169    
+
+Slack (MET) :             0.169ns  (arrival time - required time)
+  Source:                 init_reg/GEN[12].i_DFF/q_reg/C
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            GEN[12].INTERNAL.FFI/q_reg/D
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             LFSR_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
+  Data Path Delay:        0.281ns  (logic 0.227ns (80.665%)  route 0.054ns (19.335%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock LFSR_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=31, unset)           0.410     0.410    init_reg/GEN[12].i_DFF/clk
+    SLICE_X9Y13          FDCE                                         r  init_reg/GEN[12].i_DFF/q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y13          FDCE (Prop_fdce_C_Q)         0.128     0.538 r  init_reg/GEN[12].i_DFF/q_reg/Q
+                         net (fo=1, routed)           0.054     0.593    init_reg/GEN[12].i_DFF/q_reg_n_0
+    SLICE_X9Y13          LUT3 (Prop_lut3_I0_O)        0.099     0.692 r  init_reg/GEN[12].i_DFF/q_i_1__3/O
+                         net (fo=1, routed)           0.000     0.692    GEN[12].INTERNAL.FFI/q_reg_0
+    SLICE_X9Y13          FDCE                                         r  GEN[12].INTERNAL.FFI/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock LFSR_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=31, unset)           0.432     0.432    GEN[12].INTERNAL.FFI/clk
+    SLICE_X9Y13          FDCE                                         r  GEN[12].INTERNAL.FFI/q_reg/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X9Y13          FDCE (Hold_fdce_C_D)         0.091     0.523    GEN[12].INTERNAL.FFI/q_reg
+  -------------------------------------------------------------------
+                         required time                         -0.523    
+                         arrival time                           0.692    
+  -------------------------------------------------------------------
+                         slack                                  0.169    
+
+Slack (MET) :             0.178ns  (arrival time - required time)
+  Source:                 GEN[7].INTERNAL.FFI/q_reg/C
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            GEN[8].INTERNAL.FFI/q_reg/D
+                            (rising edge-triggered cell FDCE clocked by LFSR_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             LFSR_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (LFSR_clk rise@0.000ns - LFSR_clk rise@0.000ns)
+  Data Path Delay:        0.320ns  (logic 0.209ns (65.286%)  route 0.111ns (34.714%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.432ns
+    Source Clock Delay      (SCD):    0.410ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock LFSR_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=31, unset)           0.410     0.410    GEN[7].INTERNAL.FFI/clk
+    SLICE_X6Y13          FDCE                                         r  GEN[7].INTERNAL.FFI/q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y13          FDCE (Prop_fdce_C_Q)         0.164     0.574 r  GEN[7].INTERNAL.FFI/q_reg/Q
+                         net (fo=1, routed)           0.111     0.685    init_reg/GEN[8].i_DFF/state[0]
+    SLICE_X8Y13          LUT3 (Prop_lut3_I2_O)        0.045     0.730 r  init_reg/GEN[8].i_DFF/q_i_1__7/O
+                         net (fo=1, routed)           0.000     0.730    GEN[8].INTERNAL.FFI/q_reg_0
+    SLICE_X8Y13          FDCE                                         r  GEN[8].INTERNAL.FFI/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock LFSR_clk rise edge)
+                                                      0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=31, unset)           0.432     0.432    GEN[8].INTERNAL.FFI/clk
+    SLICE_X8Y13          FDCE                                         r  GEN[8].INTERNAL.FFI/q_reg/C
+                         clock pessimism              0.000     0.432    
+    SLICE_X8Y13          FDCE (Hold_fdce_C_D)         0.121     0.553    GEN[8].INTERNAL.FFI/q_reg
+  -------------------------------------------------------------------
+                         required time                         -0.553    
+                         arrival time                           0.730    
+  -------------------------------------------------------------------
+                         slack                                  0.178    
 
 
 
@@ -1127,37 +1127,37 @@ Waveform(ns):       { 0.000 4.000 }
 Period(ns):         8.000
 Sources:            { clk }
 
-Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X26Y50  GEN[0].FIRST.FF0/q_reg/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X26Y51  GEN[10].INTERNAL.FFI/q_reg/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X26Y50  GEN[11].INTERNAL.FFI/q_reg/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X26Y50  GEN[12].INTERNAL.FFI/q_reg/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X26Y50  GEN[13].INTERNAL.FFI/q_reg/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X27Y50  GEN[14].INTERNAL.FFI/q_reg/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X27Y50  GEN[15].LAST.FFN/q_reg/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X27Y50  GEN[1].INTERNAL.FFI/q_reg/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X28Y50  GEN[2].INTERNAL.FFI/q_reg/C
-Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X28Y50  GEN[3].INTERNAL.FFI/q_reg/C
-Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[0].FIRST.FF0/q_reg/C
-Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y51  GEN[10].INTERNAL.FFI/q_reg/C
-Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[11].INTERNAL.FFI/q_reg/C
-Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[12].INTERNAL.FFI/q_reg/C
-Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[13].INTERNAL.FFI/q_reg/C
-Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X27Y50  GEN[14].INTERNAL.FFI/q_reg/C
-Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X27Y50  GEN[15].LAST.FFN/q_reg/C
-Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X27Y50  GEN[1].INTERNAL.FFI/q_reg/C
-Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X28Y50  GEN[2].INTERNAL.FFI/q_reg/C
-Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X28Y50  GEN[3].INTERNAL.FFI/q_reg/C
-High Pulse Width  Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[0].FIRST.FF0/q_reg/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[0].FIRST.FF0/q_reg/C
-High Pulse Width  Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y51  GEN[10].INTERNAL.FFI/q_reg/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y51  GEN[10].INTERNAL.FFI/q_reg/C
-High Pulse Width  Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[11].INTERNAL.FFI/q_reg/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[11].INTERNAL.FFI/q_reg/C
-High Pulse Width  Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[12].INTERNAL.FFI/q_reg/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[12].INTERNAL.FFI/q_reg/C
-High Pulse Width  Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[13].INTERNAL.FFI/q_reg/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X26Y50  GEN[13].INTERNAL.FFI/q_reg/C
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location     Pin
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X8Y13  GEN[0].FIRST.FF0/q_reg/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X7Y13  GEN[10].INTERNAL.FFI/q_reg/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X8Y13  GEN[11].INTERNAL.FFI/q_reg/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X9Y13  GEN[12].INTERNAL.FFI/q_reg/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X9Y13  GEN[13].INTERNAL.FFI/q_reg/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X9Y13  GEN[14].INTERNAL.FFI/q_reg/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X9Y13  GEN[15].LAST.FFN/q_reg/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X7Y13  GEN[1].INTERNAL.FFI/q_reg/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X7Y13  GEN[2].INTERNAL.FFI/q_reg/C
+Min Period        n/a     FDCE/C   n/a            1.000         8.000       7.000      SLICE_X7Y13  GEN[3].INTERNAL.FFI/q_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X8Y13  GEN[0].FIRST.FF0/q_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X7Y13  GEN[10].INTERNAL.FFI/q_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X8Y13  GEN[11].INTERNAL.FFI/q_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X9Y13  GEN[12].INTERNAL.FFI/q_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X9Y13  GEN[13].INTERNAL.FFI/q_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X9Y13  GEN[14].INTERNAL.FFI/q_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X9Y13  GEN[15].LAST.FFN/q_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X7Y13  GEN[1].INTERNAL.FFI/q_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X7Y13  GEN[2].INTERNAL.FFI/q_reg/C
+Low Pulse Width   Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X7Y13  GEN[3].INTERNAL.FFI/q_reg/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X8Y13  GEN[0].FIRST.FF0/q_reg/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X8Y13  GEN[0].FIRST.FF0/q_reg/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X7Y13  GEN[10].INTERNAL.FFI/q_reg/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X7Y13  GEN[10].INTERNAL.FFI/q_reg/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X8Y13  GEN[11].INTERNAL.FFI/q_reg/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X8Y13  GEN[11].INTERNAL.FFI/q_reg/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X9Y13  GEN[12].INTERNAL.FFI/q_reg/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X9Y13  GEN[12].INTERNAL.FFI/q_reg/C
+High Pulse Width  Slow    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X9Y13  GEN[13].INTERNAL.FFI/q_reg/C
+High Pulse Width  Fast    FDCE/C   n/a            0.500         4.000       3.500      SLICE_X9Y13  GEN[13].INTERNAL.FFI/q_reg/C
 
 
 
