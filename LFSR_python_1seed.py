@@ -1,6 +1,6 @@
 import filecmp
 
-seed = 0b1101101011000000
+seed = 0b1101101000001000
 lfsr = seed
 period = 0
 outputstream = 0

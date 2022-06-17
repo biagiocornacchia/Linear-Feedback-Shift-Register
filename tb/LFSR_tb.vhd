@@ -12,7 +12,7 @@ architecture rtl of LFSR_tb is
 
     -- Testbench Constants
     constant T_CLK     : time      := 10 ns;
-    constant T_RESET   : time      := 12 ns;
+    constant T_RESET   : time      := 4 ns;
     constant Nbit      : positive  := 16;
 
     -- Testbench Signals
@@ -65,19 +65,17 @@ architecture rtl of LFSR_tb is
     begin
 
         if(reset_n_tb = '0') then
-            seed_tb <= "1101101011000000";
+            seed_tb <= "1101101000001000";
             seed_load_tb <= '1'; -- setting the initial value
             t := 0;
         elsif(rising_edge(clk_tb)) then
-
-            if (t > 0)  then
-                seed_load_tb <= '0';
-            end if;
-
+            seed_load_tb <= '0';
+            
             -- When the current state is equal to the initial status (seed) it means that the LFSR will start generating the same output bits
-            if(state_tb = seed_tb and t > 4) then
+            if(state_tb = seed_tb and t > 2) then
                 end_sim <= '0';
-            elsif(seed_load_tb = '0' and t >= 3) then
+            elsif(seed_load_tb = '0' and t >= 2) then
+                -- After 2 clock cycles all the registers are ready -> start collecting output bits
                 WRITE(bit_to_write, output_bit_tb);
                 WRITEline(LFSR_OUTPUT, bit_to_write);  
             end if;
