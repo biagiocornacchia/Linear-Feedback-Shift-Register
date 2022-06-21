@@ -44,23 +44,20 @@ begin
 
 	stimulus: process
 		begin
-			d_in_ext 	 	<= (others => '0');
+			d_in_ext 	 	<= (others => '1');
+			reset_n_ext <= '0';
+			wait until rising_edge(clk_ext);
 			reset_n_ext <= '1';
-			wait for 200 ns;
+			wait until rising_edge(clk_ext);
 			d_in_ext 	 	<= "10000001";
 			wait until rising_edge(clk_ext);
 			d_in_ext 	 	<= "11111111";
-			wait for 330 ns;
+			wait until rising_edge(clk_ext);
 			reset_n_ext <= '0';
-			wait for 530 ns;
-			-- test reset
-			d_in_ext 	 	<= "11101010";
+			wait until rising_edge(clk_ext);
+			d_in_ext 	 	<= "10111111";
 			reset_n_ext <= '1';
 			wait until rising_edge(clk_ext);
-			d_in_ext 	 	<= "11010111";
-			wait until rising_edge(clk_ext);
-			d_in_ext 	 	<= "11010000";
-			wait for 700 ns;
 			testing  <= false;
 	end process;
 end beh;

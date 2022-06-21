@@ -40,31 +40,23 @@ architecture beh of DFF_tb is
         );
     
         stimulus: process
-            begin
-                d_ext 	 	<= '0';            
+            begin           
+                d_ext <= '1';
+                reset_n_ext <= '0';
+                wait for 50 ns;
                 reset_n_ext <= '1';
-                wait for 100 ns;
+                wait until rising_edge(clk);
+                d_ext 	 	<= '0';
+                wait until rising_edge(clk);
                 d_ext 	 	<= '1';
                 wait until rising_edge(clk);
                 d_ext 	 	<= '0';
-                wait for 130 ns;
-                d_ext 	 	<= '1';
-                wait for 170 ns;
-                d_ext 	 	<= '1';
-                wait for 200 ns;
-                d_ext 	 	<= '0';
-                wait for 230 ns;
-                d_ext 	 	<= '1';
-                -- test reset
-                wait for 320 ns;   
-                d_ext 	 	<= '1';             
+                wait until rising_edge(clk);
+                --test reset
                 reset_n_ext <= '0';
                 wait until rising_edge(clk);
-                d_ext 	 	<= '1';
                 reset_n_ext <= '1';
                 wait until rising_edge(clk);
-                d_ext 	 	<= '0';
-                wait for 500 ns;
                 testing  <= false;
         end process;
     end beh;
