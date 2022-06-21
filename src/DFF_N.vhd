@@ -4,7 +4,6 @@ use IEEE.std_logic_1164.all;
 ------------------------------------------------
 -- Entity declaration
 ------------------------------------------------
-
 entity DFF_N is
 	generic(Nbit : positive := 16);
 	port( 
@@ -18,7 +17,6 @@ end DFF_N;
 ------------------------------------------------
 -- Architecture declaration
 ------------------------------------------------
-
 architecture beh of DFF_N is
 
     component DFF

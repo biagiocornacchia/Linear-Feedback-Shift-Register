@@ -70,7 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1_copy_1" START { ROLLUP_AUTO }
-set_param synth.incrementalSynthesisCache C:/Users/Biagio/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-3236-OSPREY/incrSyn
+set_param chipscope.maxJobs 2
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }

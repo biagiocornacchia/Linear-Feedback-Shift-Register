@@ -125,13 +125,28 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
-  set_param synth.incrementalSynthesisCache C:/Users/Biagio/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-3236-OSPREY/incrSyn
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint {C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.runs/impl_2/LFSR.dcp}
+OPTRACE "create in-memory project" START { }
+  create_project -in_memory -part xc7z010clg400-1
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
+OPTRACE "create in-memory project" END { }
+OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir {C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.cache/wt} [current_project]
   set_property parent.project_path {C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.xpr} [current_project]
   set_property ip_output_repo {{C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+OPTRACE "set parameters" END { }
+OPTRACE "add files" START { }
+  add_files -quiet {{C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.runs/synth_1_copy_1/LFSR.dcp}}
+OPTRACE "read constraints: implementation" START { }
+  read_xdc {{C:/Users/Biagio/Desktop/Ingegneria/4. Progetti/Eletronics Project Files/Linear-Feedback-Shift-Register/vivado/LFSR.srcs/constrs_1/new/clk_constraint.xdc}}
+OPTRACE "read constraints: implementation" END { }
+OPTRACE "add files" END { }
+OPTRACE "link_design" START { }
+  link_design -top LFSR -part xc7z010clg400-1 -mode out_of_context
+OPTRACE "link_design" END { }
+OPTRACE "gray box cells" START { }
+OPTRACE "gray box cells" END { }
 OPTRACE "init_design_reports" START { REPORT }
 OPTRACE "init_design_reports" END { }
 OPTRACE "init_design_write_hwdef" START { }

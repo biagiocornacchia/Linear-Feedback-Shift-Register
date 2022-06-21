@@ -4,7 +4,6 @@ use IEEE.std_logic_1164.all;
 --------------------------------------------------------------------
 --       ENTITY DECLARATION (the external view of the entity)
 --------------------------------------------------------------------
-
 entity DFF is
     port( 
         clk     : in std_logic;
@@ -15,10 +14,9 @@ entity DFF is
 			
 end DFF;
 
------------------------------------------------------------------------
+--------------------------------------------------------------------
 --      ARCHITECTURE (the internal description of the entity)
------------------------------------------------------------------------
-
+--------------------------------------------------------------------
 architecture beh of DFF is   
   begin
    
@@ -32,4 +30,5 @@ architecture beh of DFF is
 		end process;
    
 end beh;
-    
+
+
