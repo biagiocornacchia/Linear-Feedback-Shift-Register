@@ -64,18 +64,18 @@ architecture rtl of LFSR_tb is
     
     begin
 
-        if(reset_n_tb = '0') then
+        if (reset_n_tb = '0') then
             seed_tb <= "1000000000000001";
             seed_load_tb <= '1'; -- setting the initial value
             t := 0;
-        elsif(rising_edge(clk_tb)) then
+        elsif (rising_edge(clk_tb)) then
             seed_load_tb <= '0';
-            
+
             -- When the current state is equal to the initial status (seed) it means that the LFSR will start generating the same output bits
-            if(state_tb = seed_tb and t > 2) then
+            if (state_tb = seed_tb and t > 2) then
                 end_sim <= '0';
-            elsif(seed_load_tb = '0' and t >= 2) then
-                -- After 2 clock cycles all the registers are ready -> start collecting output bits
+            elsif (t >= 2) then
+                -- After 2 clock cycles all the registers are ready -> start collecting output bits                
                 WRITE(bit_to_write, output_bit_tb);
                 WRITEline(LFSR_OUTPUT, bit_to_write);  
             end if;
