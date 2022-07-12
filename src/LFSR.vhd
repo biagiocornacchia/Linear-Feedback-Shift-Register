@@ -17,7 +17,7 @@ entity LFSR is
         reset_n     : in std_logic; 
         seed        : in std_logic_vector(0 to Nbit-1);     -- Initial state of the LFSR (seed)
         seed_load   : in std_logic;                         -- In order to set the initial value
-        state       : out std_logic_vector(0 to Nbit-1);    -- Current state (used for testing)
+        state       : out std_logic_vector(0 to Nbit-1);    -- Current state of the LFSR (used for testing)
         output_bit  : out std_logic
     );
 end LFSR;
@@ -110,7 +110,7 @@ begin
         end generate LAST;
     end generate GEN;
 
-    MUX_1: process(seed_load_s, loaded_seed, q_s, output_bit_s, feedback_bit) 
+    MUX_1: process(seed_load_s, loaded_seed, q_s, feedback_bit)
     begin
         case seed_load_s is
             when '1' => d_in <= loaded_seed(0 to 15);
@@ -119,8 +119,11 @@ begin
         end case;
     end process;
 
+    -- the feedback bit is obtained XORing the taps
     feedback_bit <= (output_bit_s xor q_s(13)) xor q_s(12) xor q_s(10);
-    state <= q_s & output_bit_s; -- Updating the current status
+
+    -- Updating the current status
+    state <= q_s & output_bit_s;
     output_bit <= output_bit_s;
 
 end rtl;

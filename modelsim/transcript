@@ -1,0 +1,24 @@
+# Compile of DFF.vhd was successful.
+# Compile of DFF_N.vhd was successful.
+# Compile of LFSR.vhd was successful.
+# Compile of DFF_N_tb.vhd was successful.
+# Compile of DFF_tb.vhd was successful.
+# Compile of LFSR_tb.vhd was successful with warnings.
+# 6 compiles, 0 failed with no errors.
+vsim -gui work.lfsr_tb
+# vsim -gui work.lfsr_tb 
+# Start time: 12:05:05 on Jul 07,2022
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.lfsr_tb(rtl)
+# Loading work.lfsr(rtl)
+# Loading work.dff_n(beh)
+# Loading work.dff(beh)
+add wave -position insertpoint sim:/lfsr_tb/*
+add wave -position insertpoint  \
+sim:/lfsr_tb/dut/state
+run -all
+# End time: 12:05:56 on Jul 07,2022, Elapsed time: 0:00:51
+# Errors: 0, Warnings: 2

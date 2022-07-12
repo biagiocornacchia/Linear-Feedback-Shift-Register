@@ -57,7 +57,7 @@ architecture rtl of LFSR_tb is
         output_bit => output_bit_tb
     );
 
-    stimuli: process(clk_tb, reset_n_tb) 
+    stimuli: process(clk_tb, reset_n_tb) -- not needed
 
     variable bit_to_write : line;
     variable t : integer := 0;
@@ -65,7 +65,7 @@ architecture rtl of LFSR_tb is
     begin
 
         if (reset_n_tb = '0') then
-            seed_tb <= "1000000000000001";
+            seed_tb <= "1111111111111111";
             seed_load_tb <= '1'; -- setting the initial value
             t := 0;
         elsif (rising_edge(clk_tb)) then
